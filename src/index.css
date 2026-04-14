@@ -4,6 +4,7 @@
 	margin: 0px;
 	border: none;
     background: var(--color-primary-purple);
+
 }
 
 *,
@@ -29,6 +30,7 @@ aside, nav, footer, header, section, main {
 h1, h2, h3, h4, h5, h6, p {
     font-size: inherit;
 	font-weight: inherit;
+    background: transparent;
 }
 
 ul, ul li {
@@ -240,12 +242,12 @@ h6 {
 	font-size: var(--font-size-md);
 	margin-bottom: var(--spacing-sm);
 }
-
+/* 
 /* Стили для параграфов */
-p {
+/* p {
 	margin-bottom: var(--spacing-md);
 	line-height: var(--line-height-relaxed);
-}
+} */ */
 
 /* Стили для ссылок */
 a {

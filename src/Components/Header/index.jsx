@@ -47,13 +47,13 @@ export const Header = () => {
           {/* Десктопная навигация */}
           {!isMobile && (
             <div className={styles.desktopNav}>
-              {/* Кнопка "Гланая" */}
-              <div className={styles.navButton}>{currentPage}</div>
+              {/* "Гланая" */}
+              <div className={styles.navButton}>{currentPage.toUpperCase()}</div>
 
               {/* Логотип */}
               <Link to="/" className={styles.logoLink}>
                 <div className={styles.logoIcon}>
-                  <img src="./logo.png" />
+                  <img src="/images/logo.png" />
                 </div>
               </Link>
 
@@ -65,7 +65,7 @@ export const Header = () => {
                     e.stopPropagation();
                     setOpen(!open);
                   }}>
-                  Ещё
+                  ЕЩЁ
                   <svg className={styles.arrowIcon} width="12" height="12" viewBox="0 0 12 12">
                     {open ? (
                       <path d="M6 4L10 8H2L6 4Z" fill="currentColor" /> // Стрелка вверх
@@ -94,11 +94,11 @@ export const Header = () => {
 
           {/* Бургер-меню для мобильных */}
           {isMobile && (
-            <div className={styles.MobileNav}>
+            <div className={styles.mobileNav}>
               {/* Логотип */}
               <Link to="/" className={styles.logoLink}>
                 <div className={styles.logoIcon}>
-                  <img src="./logo.png" />
+                  <img src="images/logo.png" />
                 </div>
               </Link>
               <button
@@ -128,8 +128,8 @@ export const Header = () => {
               <a href="https://vk.com" target="_blank" rel="noopener noreferrer">
                 VK
               </a>
-              <a href="https://t.me" target="_blank" rel="noopener noreferrer">
-                Telegram
+              <a href="https://max.ru" target="_blank" rel="noopener noreferrer">
+                Max
               </a>
             </div>
           </div>

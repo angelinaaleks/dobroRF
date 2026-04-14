@@ -1,0 +1,93 @@
+.contact {
+    display: flex;
+    margin: 10px 45px;
+    background-color: rgb(0, 0, 0, 0.45);
+    border-radius: 50px;
+    padding: 0 30px;
+    position: relative;
+
+    .contactText {
+        color: var(--color-white);
+        width: 70%;
+        font-size: 48px;
+        font-weight: 400;
+        background: transparent;
+
+        @media(max-width: 1750px) {
+            font-size: 40px;
+        }
+
+        @media(max-width: 1500px) {
+            font-size: 36px;
+        }
+
+        .textOtst {
+            margin-bottom: 40px;
+        }
+
+        button {
+            width: 600px;
+            height: 90px;
+            background-color: var(--color-primary-purple);
+            border-radius: 50px;
+            margin-bottom: 20px;
+            margin-left: 240px;
+            cursor: pointer;
+
+            @media (max-width: 1750px) {
+                width: 500px;
+                height: 70px;
+            }
+
+            @media (max-width: 1500px) {
+                width: 400px;
+                height: 60px;
+            }
+        }
+    }
+
+    .contactIcon {
+        background: transparent;
+        h3 {
+            color: var(--color-white);
+            font-weight: 400;
+            font-size: 48px;
+            text-align: center;
+            position: absolute;
+            right: 30px;
+
+            @media(max-width: 1750px) {
+                font-size: 40px;
+            }
+
+            @media(max-width: 1500px) {
+                font-size: 36px;
+            }
+        }
+
+        .Icon {
+            background: transparent;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            padding-top: 70px;
+
+            img {
+                background: transparent;
+                width: 200px;
+                height: 200px;
+                cursor: pointer;
+
+                @media(max-width: 1750px) {
+                    width: 170px;
+                    height: 170px;
+                }
+
+                @media(max-width: 1500px) {
+                    width: 140px;
+                    height: 140px;
+                }
+            }
+        }
+    }
+}

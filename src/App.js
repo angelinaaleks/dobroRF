@@ -4,6 +4,7 @@ import { Header } from './Components/Header';
 import './index.css';
 import './App.css';
 import { MainPage } from './pages/MainPage/Main';
+import { Footer } from './Components/Footer';
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     <Route path="/contacts" element={<div>Контакты</div>} />
                 </Routes>
             </main>
+            <Footer />
         </Router>
     );
 }

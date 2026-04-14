@@ -40,14 +40,14 @@ export const MainPage = () => {
         <div className={styles.container}>
           <h1 className={styles.heroTitle}>Твоё доброе дело начинается здесь</h1>
           <div className={styles.heroContent}>
-            <img src="./dobro.png" />
+            <img className={styles.heroImg} src="images/dobro.png" />
             <div className={styles.heroText}>
               <p>
                 ДоброЦентр «Фрунзенский» — это пространство, где рождаются искренняя помощь, новые
-                друзья и настоящие перемены вокруг. Мы объединяем активных, неравнодушных людей
-                Фрунзенского района.
+                друзья и настоящие перемены вокруг.
               </p>
-              <p>
+              <p>Мы объединяем активных, неравнодушных людей Фрунзенского района.</p>
+              <p className={styles.heroTextOtst}>
                 Хочешь помогать, развиваться, находить единомышленников? Просто будь собой и делай
                 добро вместе с нами.
               </p>
@@ -152,7 +152,7 @@ export const MainPage = () => {
         <div className={styles.container}>
           <div className={styles.title}>
             <h2>Все волонтёрские события</h2>
-            <img src="volunteer.svg" />
+            <img src="images/volunteer.svg" />
           </div>
           <div className={styles.youthLife}>
             <h2 className={styles.youthLifeTitle}>Молодёжная жизнь района</h2>
