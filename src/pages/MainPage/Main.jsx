@@ -171,12 +171,12 @@ export const MainPage = () => {
             <div className={styles.partners}>
               <h2>Нас поддерживают и помогают вместе с нами</h2>
               <div className={styles.partnersGrid}>
-                {partners.map((partner) => {
+                {partners.map((partner) => (
                   <div key={partner.id} className={styles.partnerContent}>
                     <img src={partner.logo} />
                     <p>{partner.name}</p>
-                  </div>;
-                })}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
