@@ -10,7 +10,7 @@ function App() {
     return (
         <Router>
             <Header />
-            <main style={{ marginTop: '80px' }}>
+            <main className='mainTop'>
                 <Routes>
                     <Route path="/" element={<MainPage />} />
                     <Route path="/about" element={<div>О центре</div>} />

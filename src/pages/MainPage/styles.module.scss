@@ -1,23 +1,23 @@
 .mainPage {
     background-color: var(--color-white);
     border-radius: 90px;
-    margin: 220px 45px 0 45px;
+    margin: 0 45px; //220px
     padding: 30px 47px;
     *{
         background-color: #fff;
     }
 
-    @media(max-width: 1750px) {
-        margin-top: 180px;
-    }
+    // @media(max-width: 1750px) {
+    //     margin-top: 180px;
+    // }
 
-    @media(max-width: 1500px) {
-        margin-top: 160px;
-    }
+    // @media(max-width: 1500px) {
+    //     margin-top: 160px;
+    // }
 
-    @media(max-width: 1250px) {
-        margin-top: 110px;
-    }
+    // @media(max-width: 1250px) {
+    //     margin-top: 110px;
+    // }
 
     // Герой-секция
     .hero {

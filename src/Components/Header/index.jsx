@@ -10,16 +10,17 @@ export const Header = () => {
 
   // Навигационные пункты
   const navItems = [
-    { path: '/', label: 'Главная' },
-    { path: '/about', label: 'О центре' },
-    { path: '/youth-life', label: 'Молодёжная жизнь' },
-    { path: '/map', label: 'Карта добрых мест' },
-    { path: '/ideas', label: 'Копилка идей' },
-    { path: '/hall-of-fame', label: 'Зал славы' },
-    { path: '/contacts', label: 'Контакты' },
+    { path: '/', label: 'Главная', isAnchor: false },
+    { path: '/about', label: 'О центре', isAnchor: false },
+    { path: '/youth-life', label: 'Молодёжная жизнь', isAnchor: false },
+    { path: '/map', label: 'Карта добрых мест', isAnchor: false },
+    { path: '/ideas', label: 'Копилка идей', isAnchor: false },
+    { path: '/hall-of-fame', label: 'Зал славы', isAnchor: false },
+    { path: '/contacts', label: 'Контакты', isAnchor: true },
   ];
 
-  const currentPage = navItems.find((item) => item.path === location.pathname)?.label || 'Главная';
+  const currentPage =
+    navItems.find((item) => item.path === location.pathname && !item.isAnchor)?.label || 'Главная';
 
   useEffect(() => {
     const checkMobile = () => {
@@ -40,6 +41,21 @@ export const Header = () => {
     return () => document.removeEventListener('click', handleClickOutside);
   }, [open]);
 
+  const scrollToFooter = (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
+    setOpen(false);
+    setMobileMenuOpen(false);
+  };
+
+  const scrollToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -48,7 +64,9 @@ export const Header = () => {
           {!isMobile && (
             <div className={styles.desktopNav}>
               {/* "Гланая" */}
-              <div className={styles.navButton}>{currentPage.toUpperCase()}</div>
+              <div onClick={scrollToTop} className={styles.navButton}>
+                {currentPage.toUpperCase()}
+              </div>
 
               {/* Логотип */}
               <Link to="/" className={styles.logoLink}>
@@ -77,15 +95,26 @@ export const Header = () => {
 
                 {open && (
                   <div className={styles.dropdownMenu}>
-                    {navItems.map((item) => (
-                      <Link
-                        key={item.path}
-                        to={item.path}
-                        className={`${styles.dropdownItem} ${location.pathname === item.path ? styles.active : ''}`}
-                        onClick={() => setOpen(false)}>
-                        {item.label}
-                      </Link>
-                    ))}
+                    {navItems.map((item) =>
+                      item.isAnchor ? (
+                        // Для контактов - кнопка с скроллом
+                        <button
+                          key={item.path}
+                          onClick={scrollToFooter}
+                          className={styles.dropdownItem}>
+                          {item.label}
+                        </button>
+                      ) : (
+                        // Для остальных - обычная ссылка
+                        <Link
+                          key={item.path}
+                          to={item.path}
+                          className={`${styles.dropdownItem} ${location.pathname === item.path ? styles.active : ''}`}
+                          onClick={() => setOpen(false)}>
+                          {item.label}
+                        </Link>
+                      ),
+                    )}
                   </div>
                 )}
               </div>
@@ -115,15 +144,24 @@ export const Header = () => {
         {/* Мобильное меню */}
         {isMobile && mobileMenuOpen && (
           <div className={styles.mobileMenu}>
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`${styles.mobileMenuItem} ${location.pathname === item.path ? styles.active : ''}`}
-                onClick={() => setMobileMenuOpen(false)}>
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) =>
+              item.isAnchor ? (
+                <button
+                  key={item.path}
+                  onClick={scrollToFooter}
+                  className={`${styles.mobileMenuItem}`}>
+                  {item.label}
+                </button>
+              ) : (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`${styles.mobileMenuItem} ${location.pathname === item.path ? styles.active : ''}`}
+                  onClick={() => setMobileMenuOpen(false)}>
+                  {item.label}
+                </Link>
+              ),
+            )}
             <div className={styles.mobileSocialIcons}>
               <a href="https://vk.com" target="_blank" rel="noopener noreferrer">
                 VK

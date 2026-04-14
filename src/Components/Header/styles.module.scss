@@ -37,6 +37,50 @@
         align-items: center;
     }
 
+    .dropdownItem {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background: var(--color-white);
+        padding: var(--spacing-md) var(--spacing-lg);
+        color: var(--color-gray-800);
+        font-size: var(--font-size-sm);
+        transition: all var(--transition-fast);
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        
+        &:hover {
+            background: var(--color-gray-100);
+            color: var(--color-primary-orange);
+            padding-left: calc(var(--spacing-lg) + 4px);
+        }
+        
+        &.active {
+            background: var(--color-gray-100);
+            color: var(--color-primary-orange);
+            font-weight: 500;
+        }
+        }
+
+        .mobileMenuItem {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: var(--spacing-md) 0;
+        color: var(--color-white);
+        font-size: var(--font-size-lg);
+        transition: all var(--transition-fast);
+        background: none;
+        border: none;
+        cursor: pointer;
+        
+        &:hover, &.active {
+            color: var(--color-primary-orange);
+            transform: translateX(10px);
+        }
+    }
+
     .navButton {
         background: transparent;
         border: none;
@@ -85,8 +129,8 @@
             gap: var(--spacing-xs);
             
             &.open {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 20px;
             }
         }
 
@@ -94,12 +138,20 @@
             position: absolute;
             top: calc(100% + var(--spacing-sm));
             right: 0;
-            min-width: 240px;
+            width: 440px; //240
             background: var(--color-white);
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-lg);
             overflow: hidden;
             animation: slideDown 0.2s ease;
+
+            @media(max-width:1750px) {
+                width: 390px;
+            }
+
+            @media(max-width:1750px) {
+                width: 300px;
+            }
         }
     
         .dropdownItem {
@@ -107,9 +159,17 @@
             background-color: var(--color-white);
             padding: var(--spacing-md) var(--spacing-lg);
             color: var(--color-gray-800);
-            font-size: var(--font-size-sm);
+            font-size: 40px; //
             transition: all var(--transition-fast);
             text-decoration: none;
+
+            @media(max-width:1750px) {
+                font-size: 32px;
+            }
+
+            @media(max-width:1750px) {
+                font-size: 24px;
+            }
             
             &:hover {
                 background: var(--color-gray-100);
