@@ -1,0 +1,140 @@
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import styles from './styles.module.scss';
+
+export const Header = () => {
+  const location = useLocation();
+  const [open, setOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Навигационные пункты
+  const navItems = [
+    { path: '/', label: 'Главная' },
+    { path: '/about', label: 'О центре' },
+    { path: '/youth-life', label: 'Молодёжная жизнь' },
+    { path: '/map', label: 'Карта добрых мест' },
+    { path: '/ideas', label: 'Копилка идей' },
+    { path: '/hall-of-fame', label: 'Зал славы' },
+    { path: '/contacts', label: 'Контакты' },
+  ];
+
+  const currentPage = navItems.find((item) => item.path === location.pathname)?.label || 'Главная';
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (open && !event.target.closest(`.${styles.moreDropdown}`)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [open]);
+
+  return (
+    <header className={styles.header}>
+      <div className={styles.container}>
+        <div className={styles.head}>
+          {/* Десктопная навигация */}
+          {!isMobile && (
+            <div className={styles.desktopNav}>
+              {/* Кнопка "Гланая" */}
+              <div className={styles.navButton}>{currentPage}</div>
+
+              {/* Логотип */}
+              <Link to="/" className={styles.logoLink}>
+                <div className={styles.logoIcon}>
+                  <img src="./logo.png" />
+                </div>
+              </Link>
+
+              {/* Выпадающее меню "Ещё" */}
+              <div className={styles.moreDropdown}>
+                <button
+                  className={`${styles.navButton} ${styles.moreButton} ${open ? styles.open : ''}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setOpen(!open);
+                  }}>
+                  Ещё
+                  <svg className={styles.arrowIcon} width="12" height="12" viewBox="0 0 12 12">
+                    {open ? (
+                      <path d="M6 4L10 8H2L6 4Z" fill="currentColor" /> // Стрелка вверх
+                    ) : (
+                      <path d="M6 8L2 4H10L6 8Z" fill="currentColor" /> // Стрелка вниз
+                    )}
+                  </svg>
+                </button>
+
+                {open && (
+                  <div className={styles.dropdownMenu}>
+                    {navItems.map((item) => (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className={`${styles.dropdownItem} ${location.pathname === item.path ? styles.active : ''}`}
+                        onClick={() => setOpen(false)}>
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Бургер-меню для мобильных */}
+          {isMobile && (
+            <div className={styles.MobileNav}>
+              {/* Логотип */}
+              <Link to="/" className={styles.logoLink}>
+                <div className={styles.logoIcon}>
+                  <img src="./logo.png" />
+                </div>
+              </Link>
+              <button
+                className={styles.burgerButton}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                <span className={`${styles.burgerLine} ${mobileMenuOpen ? styles.open : ''}`} />
+                <span className={`${styles.burgerLine} ${mobileMenuOpen ? styles.open : ''}`} />
+                <span className={`${styles.burgerLine} ${mobileMenuOpen ? styles.open : ''}`} />
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Мобильное меню */}
+        {isMobile && mobileMenuOpen && (
+          <div className={styles.mobileMenu}>
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`${styles.mobileMenuItem} ${location.pathname === item.path ? styles.active : ''}`}
+                onClick={() => setMobileMenuOpen(false)}>
+                {item.label}
+              </Link>
+            ))}
+            <div className={styles.mobileSocialIcons}>
+              <a href="https://vk.com" target="_blank" rel="noopener noreferrer">
+                VK
+              </a>
+              <a href="https://t.me" target="_blank" rel="noopener noreferrer">
+                Telegram
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
+    </header>
+  );
+};

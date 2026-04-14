@@ -1,0 +1,244 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+  }
+  
+  // Логотип
+  .logoLink {
+    width: 200px;
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+  
+  // Десктопная навигация
+  .desktopNav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--spacing-md) 0;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex: 1;
+  }
+  
+  .navButton {
+    background: transparent;
+    border: none;
+    color: var(--color-white);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    position: relative;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-1px);
+    }
+    
+    &.active {
+      color: var(--color-primary-orange);
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 2px;
+        background: var(--color-primary-orange);
+        border-radius: var(--radius-full);
+      }
+    }
+  }
+  
+  // Выпадающее меню "Ещё"
+  .moreDropdown {
+    position: relative;
+  }
+  
+  .moreButton {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    
+    &.open {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+    }
+  }
+  
+  .dropdownMenu {
+    position: absolute;
+    top: calc(100% + var(--spacing-sm));
+    right: 0;
+    min-width: 240px;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    animation: slideDown 0.2s ease;
+  }
+  
+  .dropdownItem {
+    display: block;
+    background-color: var(--color-white);
+    padding: var(--spacing-md) var(--spacing-lg);
+    color: var(--color-gray-800);
+    font-size: var(--font-size-sm);
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    
+    &:hover {
+      background: var(--color-gray-100);
+      color: var(--color-primary-orange);
+      padding-left: calc(var(--spacing-lg) + 4px);
+    }
+    
+    &.active {
+      background: var(--color-gray-100);
+      color: var(--color-primary-orange);
+      font-weight: 500;
+    }
+  }
+  
+  // Бургер-меню
+  .burgerButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .burgerLine {
+    width: 100%;
+    height: 2px;
+    background: var(--color-white);
+    transition: all var(--transition-fast);
+    
+    &:first-child.open {
+      transform: translateY(9px) rotate(45deg);
+    }
+    
+    &:nth-child(2).open {
+      opacity: 0;
+    }
+    
+    &:last-child.open {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+  }
+  
+  // Мобильное меню
+  .mobileMenu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-primary-purple);
+    padding: var(--spacing-xl);
+    animation: slideIn 0.3s ease;
+  }
+  
+  .mobileMenuItem {
+    display: block;
+    padding: var(--spacing-md) 0;
+    color: var(--color-white);
+    font-size: var(--font-size-lg);
+    text-align: center;
+    transition: all var(--transition-fast);
+    
+    &:hover, &.active {
+      color: var(--color-primary-orange);
+      transform: translateX(10px);
+    }
+  }
+  
+  .mobileSocialIcons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    
+    a {
+      color: var(--color-white);
+      text-decoration: none;
+      font-size: var(--font-size-sm);
+      
+      &:hover {
+        color: var(--color-primary-orange);
+      }
+    }
+  }
+}
+
+// Анимации
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+// Адаптивность
+@media (max-width: 1024px) {
+  .header {
+    .navButton {
+      font-size: var(--font-size-xs);
+      padding: var(--spacing-xs) var(--spacing-sm);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    .container {
+      padding: 0 var(--spacing-md);
+
+    }
+    .logoIcon {
+        width: 150px;
+    }
+    .MobileNav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--spacing-md);
+    }
+    .mobileMenu {
+      top: 60px;
+    }
+  }
+}

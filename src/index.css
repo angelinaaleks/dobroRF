@@ -1,13 +1,318 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Reset and base styles */
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+    background: var(--color-primary-purple);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Links */
+a, a:link, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Common */
+aside, nav, footer, header, section, main {
+	display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+	font-weight: inherit;
+}
+
+ul, ul li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+img, svg {
+	max-width: 100%;
+	height: auto;
+}
+
+address {
+	font-style: normal;
+}
+
+/* Form */
+input, textarea, button, select {
+	font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+textarea {
+	resize: vertical;
+}
+
+button, input[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+label {
+	cursor: pointer;
+}
+
+legend {
+	display: block;
+}
+
+input[type='file'] {
+	max-width: 100%;
+}
+
+/* ========== ГЛОБАЛЬНЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ========== */
+
+/* Подключение шрифтов */
+@font-face {
+	font-family: 'Fact Semi Expanded';
+	src: url('/public/fonts/FactSemiExpanded-Regular.woff2') format('woff2'),
+		 url('/public/fonts/FactSemiExpanded-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Fact Semi Expanded';
+	src: url('/public/fonts/FactSemiExpanded-Medium.woff2') format('woff2'),
+		 url('/public//fonts/FactSemiExpanded-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Fact Semi Expanded';
+	src: url('/public/fonts/FactSemiExpanded-Bold.woff2') format('woff2'),
+		 url('/public/fonts/FactSemiExpanded-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* CSS переменные (токены дизайна) */
+:root {
+	/* Основные цвета бренда */
+	--color-primary-purple: #550577;
+	--color-primary-orange: #FF5D00;
+	
+	/* Нейтральные цвета */
+	--color-white: #FFFFFF;
+	--color-black: #000000;
+	--color-gray-100: #F7F7F7;
+	--color-gray-200: #EEEEEE;
+	--color-gray-300: #E0E0E0;
+	--color-gray-400: #BDBDBD;
+	--color-gray-500: #9E9E9E;
+	--color-gray-600: #757575;
+	--color-gray-700: #616161;
+	--color-gray-800: #424242;
+	--color-gray-900: #212121;
+	
+	/* Цвета фонов (из брендбука) */
+	--color-bg-light: var(--color-white);
+	--color-bg-dark: var(--color-primary-purple);
+	
+	/* Цвета для тегов (на шумных фонах) */
+	--color-tag-white: rgba(255, 255, 255, 0.9);
+	--color-tag-black: rgba(0, 0, 0, 0.8);
+	
+	/* Типографика */
+	--font-family-primary: 'Fact Semi Expanded', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	
+	/* Размеры шрифтов (rem = 16px) */
+	--font-size-xs: 0.75rem;   /* 12px */
+	--font-size-sm: 0.875rem;  /* 14px */
+	--font-size-base: 1rem;     /* 16px */
+	--font-size-md: 1.125rem;   /* 18px */
+	--font-size-lg: 1.25rem;    /* 20px */
+	--font-size-xl: 1.5rem;     /* 24px */
+	--font-size-2xl: 1.875rem;  /* 30px */
+	--font-size-3xl: 2.25rem;   /* 36px */
+	--font-size-4xl: 3rem;      /* 48px */
+	
+	/* Межстрочные интервалы */
+	--line-height-tight: 1.2;
+	--line-height-normal: 1.5;
+	--line-height-relaxed: 1.75;
+	
+	/* Отступы */
+	--spacing-xs: 0.25rem;   /* 4px */
+	--spacing-sm: 0.5rem;    /* 8px */
+	--spacing-md: 1rem;      /* 16px */
+	--spacing-lg: 1.5rem;    /* 24px */
+	--spacing-xl: 2rem;      /* 32px */
+	--spacing-2xl: 3rem;     /* 48px */
+	--spacing-3xl: 4rem;     /* 64px */
+	
+	/* Радиусы скруглений */
+	--radius-sm: 0.25rem;    /* 4px */
+	--radius-md: 0.5rem;     /* 8px */
+	--radius-lg: 1rem;       /* 16px */
+	--radius-xl: 1.5rem;     /* 24px */
+	--radius-full: 9999px;
+	
+	/* Тени */
+	--shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+	--shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+	
+	/* Анимации */
+	--transition-fast: 150ms ease-in-out;
+	--transition-base: 250ms ease-in-out;
+	--transition-slow: 350ms ease-in-out;
+}
+
+/* Базовые стили для body */
+body {
+	background: var(--color-white);
+	color: var(--color-gray-900);
+	font-family: var(--font-family-primary);
+	font-size: var(--font-size-base);
+	line-height: var(--line-height-normal);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Стили для заголовков */
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+	line-height: var(--line-height-tight);
+	color: var(--color-gray-900);
+}
+
+h1 {
+	font-size: var(--font-size-4xl);
+	margin-bottom: var(--spacing-lg);
+}
+
+h2 {
+	font-size: var(--font-size-3xl);
+	margin-bottom: var(--spacing-md);
+}
+
+h3 {
+	font-size: var(--font-size-2xl);
+	margin-bottom: var(--spacing-md);
+}
+
+h4 {
+	font-size: var(--font-size-xl);
+	margin-bottom: var(--spacing-sm);
+}
+
+h5 {
+	font-size: var(--font-size-lg);
+	margin-bottom: var(--spacing-sm);
+}
+
+h6 {
+	font-size: var(--font-size-md);
+	margin-bottom: var(--spacing-sm);
+}
+
+/* Стили для параграфов */
+p {
+	margin-bottom: var(--spacing-md);
+	line-height: var(--line-height-relaxed);
+}
+
+/* Стили для ссылок */
+a {
+	color: var(--color-primary-purple);
+	transition: color var(--transition-fast);
+}
+
+a:hover {
+	color: var(--color-primary-orange);
+}
+
+/* Контейнер для центрирования контента */
+.container {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 var(--spacing-lg);
+}
+
+/* Адаптивные отступы для контейнера */
+@media (max-width: 768px) {
+	.container {
+		padding: 0 var(--spacing-md);
+	}
+	
+	h1 {
+		font-size: var(--font-size-3xl);
+	}
+	
+	h2 {
+		font-size: var(--font-size-2xl);
+	}
+	
+	h3 {
+		font-size: var(--font-size-xl);
+	}
+}
+
+/* Утилиты для цветов */
+.text-purple {
+	color: var(--color-primary-purple);
+}
+
+.text-orange {
+	color: var(--color-primary-orange);
+}
+
+.bg-purple {
+	background-color: var(--color-primary-purple);
+}
+
+.bg-orange {
+	background-color: var(--color-primary-orange);
+}
+
+/* Утилиты для скруглений */
+.rounded-sm {
+	border-radius: var(--radius-sm);
+}
+
+.rounded-md {
+	border-radius: var(--radius-md);
+}
+
+.rounded-lg {
+	border-radius: var(--radius-lg);
+}
+
+.rounded-full {
+	border-radius: var(--radius-full);
 }
