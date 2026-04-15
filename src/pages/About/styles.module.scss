@@ -1,0 +1,102 @@
+.aboutPage {
+    background-color: var(--color-white);
+    border-radius: 90px;
+    margin: 0 45px; //220px
+    padding: 42px 47px;
+    *{
+        background-color: #fff;
+    }
+
+    .title {
+        h2 {
+            font-size: 50px;
+            font-weight: 400;
+            color: var(--color-primary-orange);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        h3 {
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--color-primary-orange);
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .titleSvg {
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            gap: 270px;
+        }
+    }
+    .aboutGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 30px;
+
+        img {
+            width: 95%;
+            height: 90%;
+            background: #c4c4c4;
+            border-radius: 90px;
+        }
+        h3 {
+            font-size: 50px;
+            font-weight: 400;
+            color: var(--color-primary-orange);
+            text-align: center;
+        }
+        p {
+            font-size: 50px;
+            font-weight: 400;
+            color: var(--color-primary-orange);
+            display: -webkit-box;
+            word-break: break-all; //перенос строки
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: justify;
+            padding-bottom: 15px;
+        }
+    }
+    .directions {
+        h2 {
+            font-size: 50px;
+            font-weight: 400;
+            color: var(--color-primary-orange);
+            text-align: center;
+        }
+        p {
+            h6 {
+                color: var(--color-primary-orange);
+                font-size: 36px;
+                font-weight: 400;
+            }
+            color: var(--color-primary-orange);
+            margin-bottom: 36px;
+            font-size: 36px;
+            font-weight: 400;
+            text-align: justify;
+        }
+    }
+    .aboutMap {
+        h2 {
+            font-size: 50px;
+            font-weight: 400;
+            color: var(--color-primary-orange);
+            text-align: center;
+        }
+        .map {
+            width: 100%;
+            height: 670px;
+
+            iframe {
+                width: 100%;
+                height: 100%;
+                border-radius: 50px;
+            }
+        }
+    }
+}

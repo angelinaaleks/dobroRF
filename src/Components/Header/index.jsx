@@ -56,6 +56,16 @@ export const Header = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const onClickLink = (e, path) => {
+    //e.preventDefault();
+    setOpen(false);
+    if (location.pathname === path) {
+      scrollToTop(e);
+    } else {
+      window.location.href = path;
+    }
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -110,7 +120,7 @@ export const Header = () => {
                           key={item.path}
                           to={item.path}
                           className={`${styles.dropdownItem} ${location.pathname === item.path ? styles.active : ''}`}
-                          onClick={() => setOpen(false)}>
+                          onClick={(e) => onClickLink(e, item.path)}>
                           {item.label}
                         </Link>
                       ),

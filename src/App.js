@@ -5,6 +5,7 @@ import './index.css';
 import './App.css';
 import { MainPage } from './pages/MainPage/Main';
 import { Footer } from './Components/Footer';
+import { About } from './pages/About';
 
 function App() {
     return (
@@ -13,7 +14,7 @@ function App() {
             <main className='mainTop'>
                 <Routes>
                     <Route path="/" element={<MainPage />} />
-                    <Route path="/about" element={<div>О центре</div>} />
+                    <Route path="/about" element={<About />} />
                     <Route path="/youth-life" element={<div>Молодёжная жизнь</div>} />
                     <Route path="/map" element={<div>Карта</div>} />
                     <Route path="/ideas" element={<div>Копилка идей</div>} />

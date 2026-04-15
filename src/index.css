@@ -206,49 +206,6 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/* Стили для заголовков */
-h1, h2, h3, h4, h5, h6 {
-	font-weight: 700;
-	line-height: var(--line-height-tight);
-	color: var(--color-gray-900);
-}
-
-h1 {
-	font-size: var(--font-size-4xl);
-	margin-bottom: var(--spacing-lg);
-}
-
-h2 {
-	font-size: var(--font-size-3xl);
-	margin-bottom: var(--spacing-md);
-}
-
-h3 {
-	font-size: var(--font-size-2xl);
-	margin-bottom: var(--spacing-md);
-}
-
-h4 {
-	font-size: var(--font-size-xl);
-	margin-bottom: var(--spacing-sm);
-}
-
-h5 {
-	font-size: var(--font-size-lg);
-	margin-bottom: var(--spacing-sm);
-}
-
-h6 {
-	font-size: var(--font-size-md);
-	margin-bottom: var(--spacing-sm);
-}
-/* 
-/* Стили для параграфов */
-/* p {
-	margin-bottom: var(--spacing-md);
-	line-height: var(--line-height-relaxed);
-} */ */
-
 /* Стили для ссылок */
 a {
 	color: var(--color-primary-purple);
