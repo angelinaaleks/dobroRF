@@ -9,18 +9,34 @@
 
     .title {
         h2 {
-            font-size: 50px;
+            font-size: 76px; //50
             font-weight: 400;
             color: var(--color-primary-orange);
             text-align: center;
             margin-bottom: 15px;
+
+            @media(max-width: 1750px) {
+                font-size: 64px;
+            }
+
+            @media(max-width: 1500px) {
+                font-size: 50px;
+            }
         }
         h3 {
-            font-size: 36px;
+            font-size: 50px; //36
             font-weight: 400;
             color: var(--color-primary-orange);
             text-align: center;
             margin-bottom: 70px;
+
+            @media(max-width: 1750px) {
+                font-size: 42px;
+            }
+
+            @media(max-width: 1500px) {
+                font-size: 36px;
+            }
         }
         .titleSvg {
             display: flex;
@@ -42,55 +58,98 @@
             border-radius: 90px;
         }
         h3 {
-            font-size: 50px;
+            font-size: 76px; //50
             font-weight: 400;
             color: var(--color-primary-orange);
             text-align: center;
+            letter-spacing: 0.1em;
+
+            @media(max-width: 1750px) {
+                font-size: 64px;
+            }
+
+            @media(max-width: 1500px) {
+                font-size: 50px;
+            }
         }
         p {
-            font-size: 50px;
+            font-size: 50px; //50
             font-weight: 400;
             color: var(--color-primary-orange);
             display: -webkit-box;
-            word-break: break-all; //перенос строки
-            -webkit-line-clamp: 7;
+            word-break: keep-all; //перенос строки
+            text-decoration: underline;
+            text-underline-offset: 8px;
+            -webkit-line-clamp: 10;
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
             text-align: justify;
             padding-bottom: 15px;
+
+            @media(max-width: 1750px) {
+                font-size: 42px;
+            }
+
+            @media(max-width: 1500px) {
+                font-size: 36px;
+            }
         }
     }
     .directions {
         h2 {
-            font-size: 50px;
+            font-size: 76px; //50
             font-weight: 400;
             color: var(--color-primary-orange);
             text-align: center;
+
+            @media(max-width: 1750px) {
+                font-size: 64px;
+            }
+
+            @media(max-width: 1500px) {
+                font-size: 50px;
+            }
         }
         p {
-            h6 {
-                color: var(--color-primary-orange);
-                font-size: 36px;
-                font-weight: 400;
-            }
             color: var(--color-primary-orange);
-            margin-bottom: 36px;
-            font-size: 36px;
+            margin-bottom: 50px; //36
+            font-size: 50px; //36
             font-weight: 400;
             text-align: justify;
+            letter-spacing: 0.1em;
+
+            @media(max-width: 1750px) {
+                font-size: 42px;
+            }
+
+            @media(max-width: 1500px) {
+                font-size: 36px;
+            }
         }
     }
     .aboutMap {
         h2 {
-            font-size: 50px;
+            font-size: 76px; //50
             font-weight: 400;
             color: var(--color-primary-orange);
             text-align: center;
+
+            @media(max-width: 1500px) {
+                font-size: 50px;
+            }
         }
         .map {
             width: 100%;
-            height: 670px;
+            height: 870px; //670
+
+            @media(max-width: 1750px) {
+                height: 770px;
+            } 
+
+            @media(max-width: 1500px) {
+                height: 670px;
+            } 
 
             iframe {
                 width: 100%;

@@ -86,19 +86,28 @@ export const About = () => {
           <div>
             <h3>Миссия</h3>
             <p>
-              _____________________________________________________________________________________________________________________________________
+              text text text text text text text text text text text text text text text text text
+              text text text text text text text text text text text text text text text text text
+              text text text text text text text text text text text text text text text text text
+              text text text text text text text text text text text text text
             </p>
           </div>
           <div>
             <h3>История создания</h3>
             <p>
-              _____________________________________________________________________________________________________________________________________
+              text text text text text text text text text text text text text text text text text
+              text text text text text text text text text text text text text text text text text
+              text text text text text text text text text text text text text text text text text
+              text text text text text text text text text text text text text
             </p>
           </div>
           <div>
             <h3>Команда</h3>
             <p>
-              _____________________________________________________________________________________________________________________________________
+              text text text text text text text text text text text text text text text text text
+              text text text text text text text text text text text text text text text text text
+              text text text text text text text text text text text text text text text text text
+              text text text text text text text text text text text text text
             </p>
           </div>
         </div>
