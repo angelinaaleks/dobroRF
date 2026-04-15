@@ -1,0 +1,112 @@
+.YoungPage {
+    background-color: var(--color-white);
+    border-radius: 90px;
+    margin: 0 45px; //220px
+    padding: 30px 47px;
+    *{
+        background-color: #fff;
+    }
+
+    .title {
+        h2 {
+            color: var(--color-primary-orange);
+            font-weight: 400;
+            font-size: 50px;
+            text-align: center;
+            letter-spacing: 0.1em;
+        }
+        h3 {
+            color: var(--color-primary-orange);
+            font-size: 36px;
+            font-weight: 400;
+            text-align: justify;
+            margin-bottom: 30px;
+            letter-spacing: 0.1em;
+        }
+        .titleSvg {
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            gap: 270px;
+        }
+    }
+
+    .listOfClubs {
+        h2 {
+            font-size: 50px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-align: center;
+            color: var(--color-primary-orange);
+            margin-bottom: 20px;
+        }
+        .clubs {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            .club {
+                display: flex;
+                width: 100%;
+                height: 400px;
+                padding: 40px 25px;
+                align-items: center;
+                background-color: #e8e5e1;
+                border-radius: 50px;
+                gap: 30px;
+
+                img {
+                    width: 30%;
+                    height: 100%;
+                    background-color: #c4c4c4;
+                    border-radius: 90px;
+                }
+                .clubText {
+                    width: 70%;
+                    background: transparent;
+                    h3 {
+                        background: transparent;
+                        color: var(--color-primary-orange);
+                        font-size: 50px;
+                        font-weight: 400;
+                    }
+                    h4 {
+                        background: transparent;
+                        color: var(--color-primary-orange);
+                        font-size: 36px;
+                        font-weight: 400;
+                        text-align: justify;
+
+                        a {
+                            background: transparent;
+                            color: var(--color-primary-purple);
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .mapGoodDeeds {
+        margin-top: 100px;
+
+        h2 {
+            font-size: 50px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            color: var(--color-primary-orange);
+            margin-bottom: 55px;
+            text-align: center;
+        }
+        .map {
+            width: 100%;
+            height: 745px;
+            margin-bottom: 115px;
+
+            iframe {
+                width: 100%;
+                height: 100%;
+                border-radius: 50px;
+            }
+        }
+    }
+}

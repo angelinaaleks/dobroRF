@@ -1,0 +1,66 @@
+[
+    {
+      "id": 1,
+      "title": "Название клуба 1",
+      "address": "address address address",
+      "image": "/images/club1.jpg",
+      "about": "about about about about about about about about about about",
+      "networks": ["vk.com", "max.ru"]
+    },
+    {
+      "id": 2,
+      "title": "Название клуба 2",
+      "address": "address address address",
+      "image": "/images/club2.jpg",
+      "about": "about about about about about about about about about about",
+      "networks": ["max.ru"]
+    },
+    {
+      "id": 3,
+      "title": "Название клуба 3",
+      "address": "address address address",
+      "image": "/images/club3.jpg",
+      "about": "about about about about about about about about about about",
+      "networks": ["vk.com", "max.ru"]
+    },
+    {
+      "id": 4,
+      "title": "Название клуба 4",
+      "address": "address address address",
+      "image": "/images/club4.jpg",
+      "about": "about about about about about about about about about about",
+      "networks": ["vk.com"]
+    },
+    {
+      "id": 5,
+      "title": "Название клуба 5",
+      "address": "address address address",
+      "image": "/images/club5.jpg",
+      "about": "about about about about about about about about about about",
+      "networks": ["vk.com", "max.ru"]
+    },
+    {
+      "id": 6,
+      "title": "Название клуба 6",
+      "address": "address address address",
+      "image": "/images/club6.jpg",
+      "about": "about about about about about about about about about about",
+      "networks": ["vk.com", "max.ru"]
+    },
+    {
+      "id": 7,
+      "title": "Название клуба 7",
+      "address": "address address address",
+      "image": "/images/club7.jpg",
+      "about": "about about about about about about about about about about",
+      "networks": ["vk.com", "max.ru"]
+    },
+    {
+      "id": 8,
+      "title": "Название клуба 8",
+      "address": "address address address",
+      "image": "/images/club8.jpg",
+      "about": "about about about about about about about about about about",
+      "networks": ["vk.com", "max.ru"]
+    }
+  ]
