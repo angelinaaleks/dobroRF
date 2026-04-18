@@ -8,9 +8,11 @@ import { Footer } from './Components/Footer';
 import { About } from './pages/About';
 import { Young } from './pages/Young';
 import { Ideas } from './pages/Ideas';
+import { Hall } from './pages/Hall';
 
 
 //<Route path="/map" element={<div>Карта</div>} />
+//<Route path="/contacts" element={<div>Контакты</div>} />
 
 
 function App() {
@@ -23,8 +25,7 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/youth-life" element={<Young />} />
                     <Route path="/ideas" element={<Ideas />} />
-                    <Route path="/hall-of-fame" element={<div>Зал славы</div>} />
-                    <Route path="/contacts" element={<div>Контакты</div>} />
+                    <Route path="/hall-of-fame" element={<Hall />} />
                 </Routes>
             </main>
             <Footer />

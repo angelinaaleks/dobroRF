@@ -3,6 +3,7 @@ import styles from './styles.module.scss';
 import ideas from '../../assets/ideas.json';
 import youIdeas from '../../assets/youIdeas.json';
 import { Pagination } from '../../Components/Pagination';
+import { Idea } from '../../Components/Idea';
 
 export const Ideas = () => {
   const [Page, setPage] = React.useState(1);
@@ -169,6 +170,7 @@ export const Ideas = () => {
             </div>
           </div>
         </form>
+        {/* <Idea /> */}
       </section>
     </div>
   );
