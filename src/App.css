@@ -13,3 +13,20 @@
         margin-top: 110px;
     }
 }
+
+.mainTopOpacity {
+    opacity: 50%;
+    position: fixed;
+}
+
+.feedback {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    height: 100vh;
+    background-color: transparent;
+    align-items: center;
+}

@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './styles.module.scss';
 
 export const MainPage = () => {
+  const location = useLocation();
   // Данные для ленты активностей
   const activities = [
     {
@@ -32,6 +33,20 @@ export const MainPage = () => {
     { id: 3, name: 'Партнёр 3', logo: '/partners/partner3.png' },
     { id: 4, name: 'Партнёр 4', logo: '/partners/partner4.png' },
   ];
+
+  const scrollToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const onClickLink = (e, path) => {
+    //e.preventDefault();
+    if (location.pathname === path) {
+      scrollToTop(e);
+    } else {
+      window.location.href = path;
+    }
+  };
 
   return (
     <main className={styles.mainPage}>
@@ -159,9 +174,12 @@ export const MainPage = () => {
             <div className={styles.youthContent}>
               <img alt="Картинка" />
               <div className={styles.youthContentText}>
-                <button>
-                  <span>ПЕРЕЙТИ В РАЗДЕЛ</span>
-                </button>
+                <Link
+                  to="/youth-life"
+                  onClick={(e) => onClickLink(e, '/youth-life')}
+                  className={styles.buttonLink}>
+                  ПЕРЕЙТИ В РАЗДЕЛ
+                </Link>
                 <p>
                   Где во Фрунзенском районе провести время с пользой и интересом? Мы собрали для вас
                   подборку бесплатных клубов и кружков на базе Молодёжного центра.

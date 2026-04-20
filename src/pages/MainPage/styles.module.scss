@@ -249,48 +249,37 @@
                 }
                 .youthContentText {
                     max-width: 50%;
-                    button {
+                    .buttonLink {
                         background-color: var(--color-primary-orange);
                         width: 600px;
                         height: 110px;
                         border-radius: 80px;
                         margin-bottom: 24px;
                         cursor: pointer;
+                        color: var(--color-white);
+                        padding: 10px 14px;
+                        font-weight: 400;
+                        font-size: 50px;
+                        text-align: center;
 
                         @media (max-width: 1750px) {
+                            font-size: 42px;
                             width: 500px;
                             height: 90px;
                         }
 
                         @media (max-width: 1500px) {
+                            display: block;
                             width: 400px;
                             height: 70px;
+                            font-size: 36px;
+
                         }
 
                         // @media (max-width: 1250px) {
                         //     width: 400px;
                         //     height: 70px;
                         // }
-
-                        span {
-                            background: transparent;
-                            color: var(--color-white);
-                            padding: 10px 14px;
-                            font-weight: 400;
-                            font-size: 50px;
-
-                            @media (max-width: 1750px) {
-                                font-size: 42px;
-                            }
-
-                            @media (max-width: 1500px) {
-                                font-size: 36px;
-                            }
-
-                            @media (max-width: 1250px) {
-                                font-size: 30px;
-                            }
-                        }
                     }
                     p {
                         font-weight: 400;

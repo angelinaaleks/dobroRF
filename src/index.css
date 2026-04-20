@@ -4,13 +4,16 @@
 	margin: 0px;
 	border: none;
     background: var(--color-primary-purple);
-
 }
 
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
+}
+
+body {
+    position: relative;
 }
 
 /* Links */

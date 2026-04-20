@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from './styles.module.scss';
+import { ContextApp } from '../../context';
 
 export const Footer = () => {
+  const { openSV, setOpenSV } = React.useContext(ContextApp);
+  console.log(openSV);
   return (
     <div>
       <section className={styles.contact}>
@@ -12,7 +15,9 @@ export const Footer = () => {
           </p>
           <p className={styles.textOtst}>Телефон: +7 (812) 411-85-75</p>
           <p>Электронная почта: pmdcfrunz@mail.ru</p>
-          <button className={styles.contactButton}>Обратная связь</button>
+          <button onClick={() => setOpenSV(true)} className={styles.contactButton}>
+            Обратная связь
+          </button>
         </div>
         <div className={styles.contactIcon}>
           <h3>Мы в социальных сетях</h3>
