@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
+import hall from '../../assets/hall.json';
 
 export const Hall = () => {
   return (
@@ -79,6 +80,59 @@ export const Hall = () => {
                 fill="rgb(255,93,0)"
               />
             </svg>
+          </div>
+        </div>
+        <div className={styles.hall}>
+          {hall.slice(0, 6).map((human) => (
+            <div key={human.id} className={styles.human}>
+              <img className={styles.volunteerImage} alt={human.FIO} />
+              <h2>{human.FIO}</h2>
+              {human.achievements.map((achievement) => (
+                <p>{achievement}</p>
+              ))}
+            </div>
+          ))}
+        </div>
+        <div className={styles.nominations}>
+          <h2>НОМИНАЦИИ</h2>
+          <div className={styles.volunteerMonth}>
+            <h2>Волонтёр месяца</h2>
+            <div className={styles.volunteer}>
+              <img alt="FIO" />
+              <div className={styles.volunteerText}>
+                <h2>ФИО</h2>
+                <p>
+                  Достижения Достижения Достижения Достижения Достижения Достижения Достижения
+                  Достижения Достижения Достижения Достижения
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className={styles.volunteerSerebro}>
+            <h2>Серебряный волонтёр</h2>
+            <div className={styles.volunteer}>
+              <div className={styles.volunteerText}>
+                <h2>ФИО</h2>
+                <p>
+                  Достижения Достижения Достижения Достижения Достижения Достижения Достижения
+                  Достижения Достижения Достижения Достижения
+                </p>
+              </div>
+              <img alt="FIO" />
+            </div>
+          </div>
+          <div className={styles.volunteerFamily}>
+            <h2>Семья</h2>
+            <div className={styles.volunteer}>
+              <img alt="FIO" />
+              <div className={styles.volunteerText}>
+                <h2>ФИО</h2>
+                <p>
+                  Достижения Достижения Достижения Достижения Достижения Достижения Достижения
+                  Достижения Достижения Достижения Достижения
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

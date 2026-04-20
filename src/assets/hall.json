@@ -1,0 +1,37 @@
+[
+    {
+        "id":1,
+        "FIO": "Фамилия И.О. 1",
+        "achievements": ["achievements_1", "achievements_2", "achievements_3"]
+    },
+    {
+        "id":2,
+        "FIO": "Фамилия И.О. 2",
+        "achievements": ["achievements_1", "achievements_2", "achievements_3"]
+    },
+    {
+        "id":3,
+        "FIO": "Фамилия И.О. 3",
+        "achievements": ["achievements_1", "achievements_2", "achievements_3"]
+    },
+    {
+        "id":4,
+        "FIO": "Фамилия И.О. 4",
+        "achievements": ["achievements_1", "achievements_2", "achievements_3"]
+    },
+    {
+        "id":5,
+        "FIO": "Фамилия И.О. 5",
+        "achievements": ["achievements_1", "achievements_2", "achievements_3"]
+    },
+    {
+        "id":6,
+        "FIO": "Фамилия И.О. 6",
+        "achievements": ["achievements_1", "achievements_2", "achievements_3"]
+    },
+    {
+        "id":7,
+        "FIO": "Фамилия И.О. 7",
+        "achievements": ["achievements_1", "achievements_2", "achievements_3"]
+    }
+]
