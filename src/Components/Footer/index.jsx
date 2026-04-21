@@ -22,9 +22,29 @@ export const Footer = () => {
         <div className={styles.contactIcon}>
           <h3>Мы в социальных сетях</h3>
           <div className={styles.Icon}>
-            <img src="images/vk.svg" />
-            <img src="images/max.svg" />
-            <img src="images/ob.svg" />
+            <img
+              onClick={() =>
+                window.open('https://vk.com/frunzpmdc', '_blank', 'noopener,noreferrer')
+              }
+              src="images/vk.svg"
+              alt="VK"
+            />
+            <img
+              onClick={() =>
+                window.open(
+                  'https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1',
+                  '_blank',
+                  'noopener,noreferrer',
+                )
+              }
+              src="images/max.svg"
+              alt="MAX"
+            />
+            <img
+              onClick={() => window.open('https://dobro.ru/', '_blank', 'noopener,noreferrer')}
+              src="images/ob.svg"
+              alt="DOBRO"
+            />
           </div>
         </div>
       </section>

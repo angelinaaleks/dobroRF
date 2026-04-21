@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import ideas from '../../assets/ideas.json';
 import youIdeas from '../../assets/youIdeas.json';
 import { Pagination } from '../../Components/Pagination';
 import { Idea } from '../../Components/Idea';
@@ -8,6 +7,32 @@ import { Idea } from '../../Components/Idea';
 export const Ideas = () => {
   const [Page, setPage] = React.useState(1);
   const [PageYou, setPageYou] = React.useState(1);
+  const [ideas, setIdeas] = React.useState([]);
+  const [valueSearch, setValueSearch] = React.useState('');
+  const [filterIdeas, setFilterIdeas] = React.useState([]);
+  const [searchTerm, setSearchTerm] = React.useState('');
+  React.useEffect(() => {
+    fetch(`https://6913056e52a60f10c823b49a.mockapi.io/items`)
+      .then((res) => res.json())
+      .then((obj) => {
+        setIdeas(obj);
+      });
+  }, []);
+
+  React.useEffect(() => {
+    if (!valueSearch.trim()) {
+      setFilterIdeas(ideas);
+    } else {
+      const searchLower = valueSearch.toLowerCase();
+      const filtered = ideas.filter(
+        (idea) =>
+          idea.title.toLowerCase().includes(searchLower) ||
+          idea.about.toLowerCase().includes(searchLower),
+      );
+      setFilterIdeas(filtered);
+    }
+  }, [valueSearch, ideas]);
+
   return (
     <div>
       <section className={styles.ideasPage}>
@@ -90,41 +115,74 @@ export const Ideas = () => {
         <div className={styles.ideas}>
           <h2 className={styles.IdeasTitle}>Список идей</h2>
           <div className={styles.search}>
-            <input placeholder="Поиск идеи"></input>
-            <svg
-              viewBox="0 0 70 72"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-              width="70.000000"
-              height="72.000000"
-              fill="none">
-              <rect
-                id="search"
+            <div className={styles.searchBlock}>
+              <input
+                placeholder="Поиск идеи"
+                value={valueSearch}
+                onChange={(e) => setValueSearch(e.target.value)}></input>
+              <svg
+                onClick={() => setValueSearch('')}
+                className={styles.clear}
+                width="40px"
+                height="40px"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20 20L4 4.00003M20 4L4.00002 20"
+                  stroke="#000"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <svg
+                onClick={() => setSearchTerm(valueSearch)}
+                viewBox="0 0 70 72"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
                 width="70.000000"
                 height="72.000000"
-                x="0.000000"
-                y="0.000000"
-                fill="rgb(255,255,255)"
-                fill-opacity="0"
-              />
-              <path
-                id="矢量 267"
-                d="M45.2083 42L42.9042 42L42.0875 41.19C44.9458 37.77 46.6667 33.33 46.6667 28.5C46.6667 17.73 38.1792 9 27.7083 9C17.2375 9 8.75 17.73 8.75 28.5C8.75 39.27 17.2375 48 27.7083 48C32.4042 48 36.7208 46.23 40.0458 43.29L40.8333 44.13L40.8333 46.5L55.4167 61.47L59.7625 57L45.2083 42ZM27.7083 42C20.4458 42 14.5833 35.97 14.5833 28.5C14.5833 21.03 20.4458 15 27.7083 15C34.9708 15 40.8333 21.03 40.8333 28.5C40.8333 35.97 34.9708 42 27.7083 42Z"
-                fill="rgb(68,68,68)"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </div>
-          {ideas.slice(Page * 2 - 2, Page * 2).map((idea) => (
-            <div key={idea.id} className={styles.idea}>
-              <div className={styles.ideaTitle}>
-                <h2>Название идеи: {idea.title}</h2>
-                <h2>Голоса: {idea.vote}</h2>
-              </div>
-              <p>подробнее...</p>
+                fill="none">
+                <rect
+                  id="search"
+                  width="70.000000"
+                  height="72.000000"
+                  x="0.000000"
+                  y="0.000000"
+                  fill="rgb(255,255,255)"
+                  fill-opacity="0"
+                />
+                <path
+                  id="矢量 267"
+                  d="M45.2083 42L42.9042 42L42.0875 41.19C44.9458 37.77 46.6667 33.33 46.6667 28.5C46.6667 17.73 38.1792 9 27.7083 9C17.2375 9 8.75 17.73 8.75 28.5C8.75 39.27 17.2375 48 27.7083 48C32.4042 48 36.7208 46.23 40.0458 43.29L40.8333 44.13L40.8333 46.5L55.4167 61.47L59.7625 57L45.2083 42ZM27.7083 42C20.4458 42 14.5833 35.97 14.5833 28.5C14.5833 21.03 20.4458 15 27.7083 15C34.9708 15 40.8333 21.03 40.8333 28.5C40.8333 35.97 34.9708 42 27.7083 42Z"
+                  fill="rgb(68,68,68)"
+                  fill-rule="evenodd"
+                />
+              </svg>
             </div>
-          ))}
-          <Pagination className={styles.pagination} onChangePage={(number) => setPage(number)} />
+          </div>
+          {filterIdeas.length == 0 ? (
+            <div className={styles.notFoundSearch}>
+              <h3>Ничего не найдено</h3>
+            </div>
+          ) : (
+            <div>
+              {filterIdeas.slice(Page * 2 - 2, Page * 2).map((idea) => (
+                <div key={idea.id} className={styles.idea}>
+                  <div className={styles.ideaTitle}>
+                    <h2>{idea.title}</h2>
+                    <h2>Голоса: {idea.vote}</h2>
+                    <h6 className={styles[idea.statusColor]}>{idea.status}</h6>
+                  </div>
+                  <p>подробнее...</p>
+                </div>
+              ))}
+              <Pagination
+                className={styles.pagination}
+                onChangePage={(number) => setPage(number)}
+              />
+            </div>
+          )}
         </div>
         <div>
           <h2 className={styles.IdeasTitle}>Ваши идеи</h2>
@@ -134,8 +192,9 @@ export const Ideas = () => {
                 {youIdeas.slice(PageYou * 2 - 2, PageYou * 2).map((idea) => (
                   <div key={idea.id} className={styles.idea}>
                     <div className={styles.ideaTitle}>
-                      <h2>Название идеи: {idea.title}</h2>
+                      <h2>{idea.title}</h2>
                       <h2>Голоса: {idea.vote}</h2>
+                      <h6>Статус</h6>
                     </div>
                     <p>подробнее...</p>
                   </div>

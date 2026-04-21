@@ -1,57 +1,67 @@
 [
-    {
-        "id": 1,
-        "title": "Идея 1",
-        "vote": 0,
-        "about": "text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
-        "status": ["учавствует в голосовании", "завершена", "не учавствует в голосовании"],
-        "contact": {"phone": "89999999999", 
-            "network": ["max.ru", "vk.com"],
-            "mail": "user@gmail.com"
-        }
-    },
-    {
-        "id": 2,
-        "title": "Идея 2",
-        "vote": 0,
-        "about": "text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
-        "status": ["учавствует в голосовании", "завершена", "не учавствует в голосовании"],
-        "contact": {"phone": "89999999999", 
-            "network": ["max.ru", "vk.com"],
-            "mail": "user@gmail.com"
-        }
-    },
-    {
-        "id": 3,
-        "title": "Идея 3",
-        "vote": 0,
-        "about": "text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
-        "status": ["учавствует в голосовании", "завершена", "не учавствует в голосовании"],
-        "contact": {"phone": "89999999999", 
-            "network": ["max.ru", "vk.com"],
-            "mail": "user@gmail.com"
-        }
-    },
-    {
-        "id": 4,
-        "title": "Идея 4",
-        "vote": 0,
-        "about": "text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
-        "status": ["учавствует в голосовании", "завершена", "не учавствует в голосовании"],
-        "contact": {"phone": "89999999999", 
-            "network": ["max.ru", "vk.com"],
-            "mail": "user@gmail.com"
-        }
-    },
-    {
-        "id": 5,
-        "title": "Идея 5",
-        "vote": 0,
-        "about": "text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
-        "status": ["учавствует в голосовании", "завершена", "не учавствует в голосовании"],
-        "contact": {"phone": "89999999999", 
-            "network": ["max.ru", "vk.com"],
-            "mail": "user@gmail.com"
-        }
+  {
+    "id": 1,
+    "title": "Экологический субботник в парке",
+    "vote": 15,
+    "about": "Предлагаю организовать ежемесячный субботник в парке Интернационалистов. Собирать мусор, высаживать цветы, ухаживать за деревьями. Привлечь школьников и студентов района.",
+    "status": "на голосовании",
+    "statusColor": "orange",
+    "contact": {
+      "phone": "+7 (911) 123-45-67",
+      "network": ["vk.com/eco_frunz"],
+      "mail": "eco@frunz.ru"
     }
+  },
+  {
+    "id": 2,
+    "title": "Бесплатные курсы английского для пенсионеров",
+    "vote": 42,
+    "about": "Организовать бесплатные занятия по английскому языку для пожилых людей. Занятия 2 раза в неделю в Молодёжном центре. Нужны волонтёры-преподаватели.",
+    "status": "скоро реализуем",
+    "statusColor": "green",
+    "contact": {
+      "phone": "+7 (921) 234-56-78",
+      "network": ["t.me/english_frunz"],
+      "mail": "english@frunz.ru"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Доска почёта волонтёров в соцсетях",
+    "vote": 28,
+    "about": "Создать рубрику в ВКонтакте, где каждую неделю публиковать истории активных волонтёров района с фотографиями и интервью.",
+    "status": "реализовано",
+    "statusColor": "blue",
+    "contact": {
+      "phone": "+7 (931) 345-67-89",
+      "network": ["vk.com/dobro_frunz", "t.me/dobro_frunz"],
+      "mail": "media@frunz.ru"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Сбор кормов для приюта животных",
+    "vote": 8,
+    "about": "Организовать пункт сбора кормов, лекарств и вещей для приюта 'Лучший друг' на базе Молодёжного центра. Привлечь ветеринаров для бесплатной консультации.",
+    "status": "на голосовании",
+    "statusColor": "orange",
+    "contact": {
+      "phone": "+7 (951) 456-78-90",
+      "network": ["vk.com/animals_frunz"],
+      "mail": "animals@frunz.ru"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Турнир по настольным играм",
+    "vote": 34,
+    "about": "Провести районный турнир по настольным играм среди молодёжи. Собрать любителей 'Мафии', 'Имаджинариума' и других игр. Призы от спонсоров.",
+    "status": "набирает голоса",
+    "statusColor": "orange",
+    "contact": {
+      "phone": "+7 (981) 567-89-01",
+      "network": ["t.me/boardgames_frunz"],
+      "mail": "games@frunz.ru"
+    }
+  }
 ]

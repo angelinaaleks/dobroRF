@@ -5,7 +5,7 @@
       "address": "address address address",
       "image": "/images/club1.jpg",
       "about": "about about about about about about about about about about",
-      "networks": ["vk.com", "max.ru"]
+      "networks": {"vk.com": "https://vk.com/frunzpmdc", "max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"}
     },
     {
       "id": 2,
@@ -13,7 +13,7 @@
       "address": "address address address",
       "image": "/images/club2.jpg",
       "about": "about about about about about about about about about about",
-      "networks": ["max.ru"]
+      "networks": {"max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"}
     },
     {
       "id": 3,
@@ -21,7 +21,7 @@
       "address": "address address address",
       "image": "/images/club3.jpg",
       "about": "about about about about about about about about about about",
-      "networks": ["vk.com", "max.ru"]
+      "networks": {"vk.com": "https://vk.com/frunzpmdc"}
     },
     {
       "id": 4,
@@ -29,7 +29,7 @@
       "address": "address address address",
       "image": "/images/club4.jpg",
       "about": "about about about about about about about about about about",
-      "networks": ["vk.com"]
+      "networks": {"vk.com": "https://vk.com/frunzpmdc", "max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"}
     },
     {
       "id": 5,
@@ -37,7 +37,7 @@
       "address": "address address address",
       "image": "/images/club5.jpg",
       "about": "about about about about about about about about about about",
-      "networks": ["vk.com", "max.ru"]
+      "networks": {"vk.com": "https://vk.com/frunzpmdc", "max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"}
     },
     {
       "id": 6,
@@ -45,7 +45,7 @@
       "address": "address address address",
       "image": "/images/club6.jpg",
       "about": "about about about about about about about about about about",
-      "networks": ["vk.com", "max.ru"]
+      "networks": {"vk.com": "https://vk.com/frunzpmdc", "max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"}
     },
     {
       "id": 7,
@@ -53,7 +53,7 @@
       "address": "address address address",
       "image": "/images/club7.jpg",
       "about": "about about about about about about about about about about",
-      "networks": ["vk.com", "max.ru"]
+      "networks": {"vk.com": "https://vk.com/frunzpmdc", "max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"}
     },
     {
       "id": 8,
@@ -61,6 +61,6 @@
       "address": "address address address",
       "image": "/images/club8.jpg",
       "about": "about about about about about about about about about about",
-      "networks": ["vk.com", "max.ru"]
+      "networks": {"vk.com": "https://vk.com/frunzpmdc", "max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"}
     }
   ]

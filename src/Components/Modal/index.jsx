@@ -81,22 +81,61 @@ export const Modal = () => {
     return isValid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (validateForm()) {
-      console.log(formData.name, formData.phone, formData.message, isAgreed);
-      alert('Форма отправлена');
-      setFormData({
-        name: '',
-        phone: '',
-        message: '',
-      });
-      setIsAgreed(false);
+      const result = await sendToTelegram();
+      if (result.success) {
+        console.log(formData.name, formData.phone, formData.message, isAgreed);
+        alert('Форма отправлена');
+        setFormData({
+          name: '',
+          phone: '',
+          message: '',
+        });
+        setIsAgreed(false);
 
-      setTimeout(() => {
-        setOpenSV(false);
-      }, 1000);
+        setTimeout(() => {
+          setOpenSV(false);
+        }, 1000);
+      } else {
+        console.error(result.error);
+      }
+    }
+  };
+
+  const BotToken = '8622421670:AAGsPaNIo4XDLLXX1CY6ilYgfMZG8S9MWQs';
+  const idChat = '1129401738';
+  const sendToTelegram = async () => {
+    const message = `Имя: ${formData.name}\nТелефон: ${formData.phone}\nСообщение: ${formData.message}\nВремя: ${new Date().toLocaleString()}`;
+
+    const url = `https://api.telegram.org/bot${BotToken}/sendMessage`;
+
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: idChat,
+          text: message,
+          parse_mode: 'HTML',
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.ok) {
+        return { success: true };
+      } else {
+        console.error('Telegram error:', data);
+        return { success: false, error: data.description };
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+      return { success: false, error: error.message };
     }
   };
   return (

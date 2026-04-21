@@ -96,18 +96,21 @@ export const Young = () => {
                   <h3>{club.title}</h3>
                   <h4>Адрес: {club.address}</h4>
                   <h4>О клубе: {club.about}</h4>
-                  {club.networks.length > 1 ? (
-                    <h4>
-                      Ссылки на соц.сети клуба:{' '}
-                      {club.networks.map((network) => (
-                        <a>{network} </a>
-                      ))}
-                    </h4>
+                  {Object.keys(club.networks).length > 1 ? (
+                    <h4>Ссылки на соц.сети клуба: </h4>
                   ) : (
                     <h4>
-                      Ссылка на соц.сеть клуба: <a>{club.networks[0]}</a>
+                      Ссылка на соц.сеть клуба: <a>{}</a>
                     </h4>
                   )}
+                  {Object.entries(club.networks).map(([name, url], index) => (
+                    <span>
+                      <a href={url} target="_blank" rel="noopener noreferrer">
+                        {name}
+                      </a>
+                      {index < Object.entries(club.networks).length - 1 && ', '}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))}

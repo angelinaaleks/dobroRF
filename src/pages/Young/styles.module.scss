@@ -69,18 +69,18 @@
                         font-size: 50px;
                         font-weight: 400;
                     }
-                    h4 {
+                    h4{
                         background: transparent;
                         color: var(--color-primary-orange);
                         font-size: 36px;
                         font-weight: 400;
                         text-align: justify;
-
-                        a {
-                            background: transparent;
-                            color: var(--color-primary-purple);
-                            cursor: pointer;
-                        }
+                    }
+                    span, a {
+                        background: transparent;
+                        font-size: 36px;
+                        color: var(--color-primary-purple);
+                        cursor: pointer;
                     }
                 }
             }
