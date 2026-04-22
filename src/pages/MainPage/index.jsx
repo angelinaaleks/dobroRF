@@ -50,7 +50,6 @@ export const MainPage = () => {
 
   return (
     <main className={styles.mainPage}>
-      {/* Герой-секция с приветствием */}
       <section className={styles.hero}>
         <div className={styles.container}>
           <h1 className={styles.heroTitle}>Твоё доброе дело начинается здесь</h1>
@@ -77,6 +76,7 @@ export const MainPage = () => {
           <div className={styles.title}>
             <div className={styles.activitiesTitle}>
               <svg
+                className={styles.circle}
                 viewBox="0 0 44 40"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -95,6 +95,7 @@ export const MainPage = () => {
               </svg>
               <h2 className={styles.sectionTitle}>ЛЕНТА АКТИВНОСТЕЙ</h2>
               <svg
+                className={styles.circle}
                 viewBox="0 0 44 40"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -113,6 +114,7 @@ export const MainPage = () => {
               </svg>
             </div>
             <svg
+              className={styles.smile}
               viewBox="0 0 183 133"
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"

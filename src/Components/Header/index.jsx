@@ -72,7 +72,6 @@ export const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.head}>
-          {/* Десктопная навигация */}
           {!isMobile && (
             <div className={styles.desktopNav}>
               {/* "Гланая" */}

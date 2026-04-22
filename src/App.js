@@ -11,6 +11,7 @@ import { Ideas } from './pages/Ideas';
 import { Hall } from './pages/Hall';
 import { ContextApp } from './context';
 import { Modal } from './Components/Modal';
+import { Idea } from './Components/Idea';
 
 
 //<Route path="/map" element={<div>Карта</div>} />
@@ -19,11 +20,26 @@ import { Modal } from './Components/Modal';
 
 function App() {
     const [openSV, setOpenSV] = React.useState(false);
+    const [ideas, setIdeas] = React.useState([]);
+    React.useEffect(() => {
+        fetch(`https://6913056e52a60f10c823b49a.mockapi.io/items`)
+            .then((res) => res.json())
+            .then((obj) => {
+                setIdeas(obj);
+            });
+    }, []);
+
     return (
-        <ContextApp.Provider value={{ setOpenSV, openSV }}>
+        <ContextApp.Provider value={{ setOpenSV, openSV, ideas, setIdeas }}>
             <Router>
                 <div className={openSV ? "mainTopOpacity" : ""}>
                     <Header />
+                    <img className='right' src="images/right.svg" />
+                    <img className='left' src="images/left.svg" />
+                    <div className='bottom'>
+                        <img className='bottomImageLeft' src="images/bottom.svg" />
+                        <img className='bottomImageRight' src="images/bottom.svg" />
+                    </div>
                     <main className='mainTop'>
                         <Routes>
                             <Route path="/" element={<MainPage />} />
@@ -31,6 +47,7 @@ function App() {
                             <Route path="/youth-life" element={<Young />} />
                             <Route path="/ideas" element={<Ideas />} />
                             <Route path="/hall-of-fame" element={<Hall />} />
+                            <Route path="/ideas/:id" element={<Idea />} />
                         </Routes>
                     </main>
                     <Footer />

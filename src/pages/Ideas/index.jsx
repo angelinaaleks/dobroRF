@@ -3,21 +3,16 @@ import styles from './styles.module.scss';
 import youIdeas from '../../assets/youIdeas.json';
 import { Pagination } from '../../Components/Pagination';
 import { Idea } from '../../Components/Idea';
+import { Link } from 'react-router-dom';
+import { ContextApp } from '../../context';
 
 export const Ideas = () => {
   const [Page, setPage] = React.useState(1);
   const [PageYou, setPageYou] = React.useState(1);
-  const [ideas, setIdeas] = React.useState([]);
+  const { ideas, setIdeas } = React.useContext(ContextApp);
   const [valueSearch, setValueSearch] = React.useState('');
   const [filterIdeas, setFilterIdeas] = React.useState([]);
   const [searchTerm, setSearchTerm] = React.useState('');
-  React.useEffect(() => {
-    fetch(`https://6913056e52a60f10c823b49a.mockapi.io/items`)
-      .then((res) => res.json())
-      .then((obj) => {
-        setIdeas(obj);
-      });
-  }, []);
 
   React.useEffect(() => {
     if (!valueSearch.trim()) {
@@ -168,14 +163,16 @@ export const Ideas = () => {
           ) : (
             <div>
               {filterIdeas.slice(Page * 2 - 2, Page * 2).map((idea) => (
-                <div key={idea.id} className={styles.idea}>
-                  <div className={styles.ideaTitle}>
-                    <h2>{idea.title}</h2>
-                    <h2>Голоса: {idea.vote}</h2>
-                    <h6 className={styles[idea.statusColor]}>{idea.status}</h6>
+                <Link to={`/ideas/${idea.id}`} className={styles.moreIdea}>
+                  <div key={idea.id} className={styles.idea}>
+                    <div className={styles.ideaTitle}>
+                      <h2>{idea.title}</h2>
+                      <h2>Голоса: {idea.vote}</h2>
+                      <h6 className={styles[idea.statusColor]}>{idea.status}</h6>
+                    </div>
+                    <p>подробнее...</p>
                   </div>
-                  <p>подробнее...</p>
-                </div>
+                </Link>
               ))}
               <Pagination
                 className={styles.pagination}

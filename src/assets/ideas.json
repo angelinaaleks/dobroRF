@@ -8,7 +8,7 @@
     "statusColor": "orange",
     "contact": {
       "phone": "+7 (911) 123-45-67",
-      "network": ["vk.com/eco_frunz"],
+      "networks": {"max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"},
       "mail": "eco@frunz.ru"
     }
   },
@@ -21,7 +21,7 @@
     "statusColor": "green",
     "contact": {
       "phone": "+7 (921) 234-56-78",
-      "network": ["t.me/english_frunz"],
+      "networks": {"max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"},
       "mail": "english@frunz.ru"
     }
   },
@@ -34,7 +34,7 @@
     "statusColor": "blue",
     "contact": {
       "phone": "+7 (931) 345-67-89",
-      "network": ["vk.com/dobro_frunz", "t.me/dobro_frunz"],
+      "networks": {"max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"},
       "mail": "media@frunz.ru"
     }
   },
@@ -47,7 +47,7 @@
     "statusColor": "orange",
     "contact": {
       "phone": "+7 (951) 456-78-90",
-      "network": ["vk.com/animals_frunz"],
+      "networks": {"max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"},
       "mail": "animals@frunz.ru"
     }
   },
@@ -60,7 +60,7 @@
     "statusColor": "orange",
     "contact": {
       "phone": "+7 (981) 567-89-01",
-      "network": ["t.me/boardgames_frunz"],
+      "networks": {"max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"},
       "mail": "games@frunz.ru"
     }
   }

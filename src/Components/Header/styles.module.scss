@@ -9,6 +9,10 @@
     margin: 0 auto;
     padding: 0 100px;
 
+    @media(max-width: 600px) {
+        padding: 0 50px;
+    }
+
     .logoLink {
         width: 697px;
         &:hover {
@@ -25,6 +29,10 @@
 
         @media(max-width: 1250px) {
             width: 337px;
+        }
+
+        @media(max-width: 900px) {
+            width: 230px;
         }
     }
     
@@ -95,6 +103,10 @@
         @media(max-width: 1500px) {
             font-size: 20px;
         }
+
+        @media(max-width: 1000px) {
+            font-size: 16px;
+        }
             
         &:hover {
             background: rgba(255, 255, 255, 0.1);
@@ -152,6 +164,10 @@
             @media(max-width:1750px) {
                 width: 300px;
             }
+
+            @media(max-width: 900px) {
+                width: 200px;
+            }
         }
     
         .dropdownItem {
@@ -169,6 +185,11 @@
 
             @media(max-width:1750px) {
                 font-size: 24px;
+            }
+
+            @media(max-width:900px) {
+                font-size: 16px;
+                padding: 10px 20px;
             }
             
             &:hover {
@@ -192,8 +213,16 @@
         margin-top: 30px;
         align-items: center;
 
+        @media(max-width: 550px) {
+            margin-top: 15px;
+        }
+
         .logoIcon {
-            width: 297px;
+            width: 200px;
+
+            @media(max-width: 650px) {
+                width: 160px;
+            }
         }
         .burgerButton {
             display: flex;
@@ -238,6 +267,10 @@
         padding: var(--spacing-xl);
         animation: slideIn 0.3s ease;
         text-align: center;
+
+        @media(max-width: 650px) {
+            top: 70px;
+        }
 
         .mobileMenuItem {
             display: block;

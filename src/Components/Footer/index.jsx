@@ -26,7 +26,7 @@ export const Footer = () => {
               onClick={() =>
                 window.open('https://vk.com/frunzpmdc', '_blank', 'noopener,noreferrer')
               }
-              src="images/vk.svg"
+              src="/images/vk.svg"
               alt="VK"
             />
             <img
@@ -37,12 +37,12 @@ export const Footer = () => {
                   'noopener,noreferrer',
                 )
               }
-              src="images/max.svg"
+              src="/images/max.svg"
               alt="MAX"
             />
             <img
               onClick={() => window.open('https://dobro.ru/', '_blank', 'noopener,noreferrer')}
-              src="images/ob.svg"
+              src="/images/ob.svg"
               alt="DOBRO"
             />
           </div>
