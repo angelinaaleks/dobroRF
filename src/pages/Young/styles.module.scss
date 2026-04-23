@@ -1,64 +1,335 @@
 .YoungPage {
     background-color: var(--color-white);
     border-radius: 90px;
-    margin: 0 45px; //220px
-    padding: 30px 47px;
+    margin: 0 90px; //220px
+    padding: 60px 80px;
     *{
         background-color: #fff;
     }
 
+    @media(max-width: 1800px) {
+        margin: 0 70px;
+    }
+
+    @media(max-width: 1400px) {
+        margin: 0 50px;
+        padding: 60px;
+    }
+
+    @media(max-width: 1200px) {
+        margin: 0 40px;
+        padding: 40px;
+    }
+
+    @media(max-width: 800px) {
+        margin: 0 30px;
+        padding: 20px;
+    }
+
+    @media(max-width: 600px) {
+        border-radius: 60px;
+        margin: 0 20px;
+    }
+
+
+    @media(max-width: 440px) {
+        border-radius: 40px;
+    }
+
+    @media(max-width: 400px) {
+        padding: 20px 10px;
+    }
+
     .title {
+        background: transparent;
         h2 {
             color: var(--color-primary-orange);
             font-weight: 400;
-            font-size: 50px;
+            font-size: 76px;
             text-align: center;
             letter-spacing: 0.1em;
+
+            background: transparent;
+
+            @media (max-width: 1800px) {
+                font-size: 66px;
+            }
+
+            @media (max-width: 1600px) {
+                font-size: 50px;
+            }
+
+            @media (max-width: 1200px) {
+                font-size: 36px;
+            }
+
+            @media (max-width: 1000px) {
+                font-size: 28px;
+            }
+
+            @media (max-width: 800px) {
+                font-size: 24px;
+            }
+
+            @media (max-width: 650px) {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            @media (max-width: 440px) {
+                font-size: 15px;
+            }
         }
         h3 {
             color: var(--color-primary-orange);
-            font-size: 36px;
+            font-size: 50px;
             font-weight: 400;
             text-align: justify;
             margin-bottom: 30px;
             letter-spacing: 0.1em;
+
+            @media (max-width: 1800px) {
+                font-size: 42px;
+            }
+
+            @media (max-width: 1600px) {
+                font-size: 36px;
+            }
+
+            @media (max-width: 1200px) {
+                font-size: 28px;
+            }
+
+            @media (max-width: 1000px) {
+                font-size: 24px;
+                margin-bottom: 40px;
+            }
+
+            @media (max-width: 800px) {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+
+            @media (max-width: 650px) {
+                font-size: 15px;
+            }
+
+            @media (max-width: 440px) {
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
         }
         .titleSvg {
             display: flex;
             justify-content: center;
             align-items: start;
             gap: 270px;
+
+            @media(max-width: 1400px) {
+                gap: 200px
+            }
+
+            @media(max-width: 1200px) {
+                gap: 160px
+            }
+
+            @media(max-width: 1000px) {
+                gap: 130px
+            }
+
+            @media(max-width: 800px) {
+                gap: 100px
+            }
+
+            @media(max-width: 600px) {
+                gap: 70px
+            }
+
+            @media(max-width: 400px) {
+                gap: 40px
+            }
+
+            .circle {
+                width: 80px; //44px
+                height: 80px; //40px
+                @media(max-width: 1800px) {
+                    width: 70px;
+                    height: 70px;
+                }
+
+                @media(max-width: 1600px) {
+                    width: 55px;
+                    height: 55px;
+                }
+
+                @media(max-width: 1400px) {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                @media(max-width: 1200px) {
+                    width: 30px;
+                    height: 30px;
+                }
+
+                @media(max-width: 820px) {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                @media(max-width: 500px) {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+            .smile {
+                width: 270px; //183px
+                height: 200px; //133px
+
+                @media(max-width: 1800px) {
+                    width: 240px;
+                    height: 170px;
+                }
+
+                @media(max-width: 1600px) {
+                    width: 200px;
+                    height: 130px;
+                }
+
+                @media(max-width: 1400px) {
+                    width: 180px;
+                    height: 130px;
+                }
+
+                @media(max-width: 1200px) {
+                    width: 150px;
+                    height: 100px;
+                }
+
+                @media(max-width: 1000px) {
+                    width: 120px;
+                    height: 80px;
+                }
+
+                @media(max-width: 820px) {
+                    width: 90px;
+                    height: 60px;
+                }
+
+                @media(max-width: 500px) {
+                    width: 60px;
+                    height: 40px;
+                }
+            }
         }
     }
 
     .listOfClubs {
         h2 {
-            font-size: 50px;
+            font-size: 76px;
             font-weight: 400;
             letter-spacing: 0.1em;
             text-align: center;
             color: var(--color-primary-orange);
             margin-bottom: 20px;
+            background: transparent;
+
+            @media (max-width: 1800px) {
+                font-size: 66px;
+            }
+
+            @media (max-width: 1600px) {
+                font-size: 50px;
+            }
+
+            @media (max-width: 1200px) {
+                font-size: 36px;
+            }
+
+            @media (max-width: 1000px) {
+                font-size: 28px;
+            }
+
+            @media (max-width: 800px) {
+                font-size: 24px;
+            }
+
+            @media (max-width: 650px) {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            @media (max-width: 440px) {
+                font-size: 15px;
+            }
         }
         .clubs {
             display: flex;
             flex-direction: column;
             gap: 30px;
+
+            @media(max-width: 800px) {
+                gap: 15px;
+            }
+
+            @media(max-width: 520px) {
+                gap: 7px;
+            }
+
             .club {
                 display: flex;
                 width: 100%;
-                height: 400px;
+                height: 600px;
                 padding: 40px 25px;
                 align-items: center;
                 background-color: #e8e5e1;
                 border-radius: 50px;
                 gap: 30px;
 
+                @media(max-width: 1800px) {
+                    height: 500px;
+                }
+
+                @media(max-width: 1400px) {
+                    height: 400px;
+                }
+
+                @media(max-width: 1100px) {
+                    height: 300px;
+                }
+
+                @media(max-width: 800px) {
+                    height: 230px;
+                    padding: 20px 15px;
+                }
+
+                @media(max-width: 650px) {
+                    height: 200px;
+                    gap: 10px;
+                }
+
+                @media(max-width: 520px) {
+                    height: 170px;
+                }
+
+                @media(max-width: 400px) {
+                    height: 140px;
+                    border-radius: 30px;
+                }
+
                 img {
                     width: 30%;
                     height: 100%;
                     background-color: #c4c4c4;
                     border-radius: 90px;
+
+                    @media(max-width: 1100px) {
+                        border-radius: 40px;
+                    }
+
+                    @media(max-width: 400px) {
+                        border-radius: 20px;
+                    }
                 }
                 .clubText {
                     width: 70%;
@@ -66,21 +337,101 @@
                     h3 {
                         background: transparent;
                         color: var(--color-primary-orange);
-                        font-size: 50px;
+                        font-size: 60px;
                         font-weight: 400;
+
+                        @media (max-width: 1800px) {
+                            font-size: 54px;
+                        }
+
+                        @media (max-width: 1600px) {
+                            font-size: 36px;
+                        }
+
+                        @media (max-width: 1200px) {
+                            font-size: 26px;
+                        }
+
+                        @media (max-width: 1000px) {
+                            font-size: 22px;
+                        }
+
+                        @media (max-width: 800px) {
+                            font-size: 18px;
+                        }
+
+                        @media (max-width: 650px) {
+                            font-size: 15px;
+                        }
+
+                        @media (max-width: 440px) {
+                            font-size: 12px;
+                        }
                     }
                     h4{
                         background: transparent;
                         color: var(--color-primary-orange);
-                        font-size: 36px;
+                        font-size: 46px;
                         font-weight: 400;
                         text-align: justify;
+
+                        @media(max-width: 1800px) {
+                            font-size: 42px;
+                        }
+
+                        @media(max-width: 1600px) {
+                            font-size: 36px;
+                        }
+
+                        @media(max-width: 1400px) {
+                            font-size: 30px;
+                        }
+
+                        @media(max-width: 1100px) {
+                            font-size: 22px;
+                        }
+
+                        @media(max-width: 800px) {
+                            font-size: 16px;
+                        }
+
+                        @media(max-width: 520px) {
+                            font-size: 12px;
+                        }
+
+                        @media(max-width: 400px) {
+                            font-size: 10px;
+                        }
                     }
                     span, a {
                         background: transparent;
-                        font-size: 36px;
+                        font-size: 46px;
                         color: var(--color-primary-purple);
                         cursor: pointer;
+
+                        @media(max-width: 1800px) {
+                            font-size: 42px;
+                        }
+
+                        @media(max-width: 1400px) {
+                            font-size: 30px;
+                        }
+
+                        @media(max-width: 1100px) {
+                            font-size: 22px;
+                        }
+
+                        @media(max-width: 800px) {
+                            font-size: 16px;
+                        }
+
+                        @media(max-width: 520px) {
+                            font-size: 12px;
+                        }
+
+                        @media(max-width: 400px) {
+                            font-size: 10px;
+                        }
                     }
                 }
             }
@@ -89,23 +440,100 @@
     .mapGoodDeeds {
         margin-top: 100px;
 
+        @media(max-width: 1800px) {
+            margin-top: 40px;
+        }
+
+        @media(max-width: 800px) {
+            margin-top: 20px;
+        }
+
         h2 {
-            font-size: 50px;
+            font-size: 74px;
             font-weight: 400;
             letter-spacing: 0.1em;
             color: var(--color-primary-orange);
             margin-bottom: 55px;
             text-align: center;
+            background: transparent;
+
+            @media (max-width: 1800px) {
+                font-size: 56px;
+                margin-bottom: 30px;
+            }
+
+            @media (max-width: 1600px) {
+                font-size: 50px;
+            }
+
+            @media (max-width: 1200px) {
+                font-size: 36px;
+            }
+
+            @media (max-width: 1000px) {
+                font-size: 28px;
+            }
+
+            @media (max-width: 800px) {
+                font-size: 24px;
+            }
+
+            @media (max-width: 650px) {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            @media (max-width: 440px) {
+                font-size: 15px;
+            }
         }
         .map {
             width: 100%;
-            height: 745px;
+            height: 870px;
             margin-bottom: 115px;
+            background: transparent;
+
+            @media(max-width: 1600px) {
+                height: 760px;
+            }
+
+            @media(max-width: 1400px) {
+                height: 680px;
+            }
+
+            @media(max-width: 1200px) {
+                height: 600px;
+                margin-bottom: 20px;
+            }
+
+            @media(max-width: 1000px) {
+                height: 460px;
+            }
+
+            @media(max-width: 800px) {
+                height: 400px;
+            }
+
+            @media(max-width: 600px) {
+                height: 300px;
+            }
+
+            @media(max-width: 510px) {
+                height: 240px;
+            }
+
+            @media(max-width: 400px) {
+                height: 180px;
+            }
 
             iframe {
                 width: 100%;
                 height: 100%;
                 border-radius: 50px;
+
+                @media(max-width: 400px) {
+                    border-radius: 30px;
+                }
             }
         }
     }

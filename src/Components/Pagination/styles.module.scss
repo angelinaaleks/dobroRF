@@ -16,13 +16,38 @@
                 align-items: center;
                 margin-right: 10px;
                 cursor: pointer;
+
+                @media(max-width: 1100px) {
+                    margin-right: 5px;
+                }
+
+                @media(max-width: 600px) {
+                    margin-right: 0;
+                }
                 a {
                     color: var(--color-primary-orange);
-                    font-size: 36px;
+                    font-size: 50px;
                     width: 40px;
                     height: 40px;
                     text-align: center;
                     justify-content: center;
+
+                    @media(max-width: 1800px) {
+                        font-size: 42px;
+                    }
+
+                    @media(max-width: 1100px) {
+                        font-size: 26px;
+                    }
+
+                    @media(max-width: 800px) {
+                        font-size: 20px;
+                    }
+
+                    @media(max-width: 520px) {
+                        font-size: 14px;
+                        width: 30px;
+                    }
                 }
         }
     }
