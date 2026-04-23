@@ -13,6 +13,10 @@
         padding: 0 50px;
     }
 
+    @media(max-width: 400px) {
+        padding: 0 30px;
+    }
+
     .logoLink {
         width: 697px;
         &:hover {
@@ -223,6 +227,10 @@
             @media(max-width: 650px) {
                 width: 160px;
             }
+
+            @media(max-width: 400px) {
+                width: 140px;
+            }
         }
         .burgerButton {
             display: flex;
@@ -270,6 +278,10 @@
 
         @media(max-width: 650px) {
             top: 70px;
+        }
+
+        @media(max-width: 400px) {
+            top: 50px;
         }
 
         .mobileMenuItem {

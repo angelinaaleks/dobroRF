@@ -16,6 +16,10 @@
     @media(max-width: 650px) {
         margin-top: 80px;
     }
+
+    @media(max-width: 400px) {
+        margin-top: 60px;
+    }
 }
 
 .mainTopOpacity {
@@ -189,5 +193,22 @@
     .bottomImageRight {
         right: 40px;
         width: 100px;
+    }
+}
+
+@media(max-width: 400px) {
+    .right {
+        width: 60px;
+    }
+    .left {
+        width: 60px;
+    }
+    .bottomImageLeft {
+        width: 80px;
+        left: 30px;
+    }
+    .bottomImageRight {
+        right: 30px;
+        width: 80px;
     }
 }
