@@ -9,7 +9,7 @@
     margin: 0 auto;
     padding: 0 100px;
 
-    @media(max-width: 600px) {
+    @media(max-width: 1000px) {
         padding: 0 50px;
     }
 
@@ -280,8 +280,8 @@
             top: 70px;
         }
 
-        @media(max-width: 400px) {
-            top: 50px;
+        @media(max-width: 500px) {
+            top:53px;
         }
 
         .mobileMenuItem {

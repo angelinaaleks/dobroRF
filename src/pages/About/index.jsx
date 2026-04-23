@@ -3,13 +3,14 @@ import styles from './styles.module.scss';
 
 export const About = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <section className={styles.aboutPage}>
         <div className={styles.title}>
           <h2>О Центре</h2>
           <h3>Кто мы, чем занимаемся и почему вас с нами по пути</h3>
           <div className={styles.titleSvg}>
             <svg
+              className={styles.circle}
               viewBox="0 0 44 40"
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -27,6 +28,7 @@ export const About = () => {
               />
             </svg>
             <svg
+              className={styles.smile}
               viewBox="0 0 183 133"
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -63,6 +65,7 @@ export const About = () => {
               />
             </svg>
             <svg
+              className={styles.circle}
               viewBox="0 0 44 40"
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
