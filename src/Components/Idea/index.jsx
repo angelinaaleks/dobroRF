@@ -78,6 +78,7 @@ export const Idea = () => {
           <h3>Твоя идея — чья-то добрая реальность</h3>
           <div className={styles.titleSvg}>
             <svg
+              className={styles.circle}
               viewBox="0 0 44 40"
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -95,6 +96,7 @@ export const Idea = () => {
               />
             </svg>
             <svg
+              className={styles.smile}
               viewBox="0 0 183 133"
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -131,6 +133,7 @@ export const Idea = () => {
               />
             </svg>
             <svg
+              className={styles.circle}
               viewBox="0 0 44 40"
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
