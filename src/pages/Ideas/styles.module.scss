@@ -241,12 +241,14 @@
                     font-size: 24px;
                     @media(max-width: 1600px) {
                         height: 83px;
+                        font-size: 20px;
                     }
                     @media(max-width: 1200px) {
                         height: 70px;
                     }
                     @media(max-width: 1000px) {
                         height: 60px;
+                        font-size: 16px;
                     }
                     @media(max-width: 800px) {
                         height: 45px;
@@ -254,6 +256,7 @@
                     }
                     @media(max-width: 650px) {
                         height: 35px;
+                        font-size: 12px;
                     }
 
                     &::placeholder {
@@ -536,22 +539,27 @@
             cursor: pointer;  
             @media(max-width: 1600px) {
                 height: 83px;
+                font-size: 20px;
             }
             @media(max-width: 1200px) {
                 height: 55px;
                 padding: 10px 20px;
+                font-size: 18px;
             }
             @media(max-width: 1000px) {
                 height: 45px;
                 padding: 10px 20px;
+                font-size: 16px;
             }
             @media(max-width: 800px) {
                 height: 36px;
                 padding: 10px 10px;
+                font-size: 14px;
             }
             @media(max-width: 500px) {
                 height: 25px;
                 padding: 5px;
+                font-size: 12px;
             }      
 
             &::placeholder {
@@ -598,16 +606,19 @@
                 @media(max-width: 1200px) {
                     height: 500px;
                     padding: 20px 30px;
+                    font-size: 18px;
                 }
                 @media(max-width: 800px) {
                     height: 400px;
                     padding: 10px 20px;
                     border-radius: 30px;
+                    font-size: 14px;
                 }
                 @media(max-width: 510px) {
                     height: 300px;
                     padding: 7px 10px;
                     border-radius: 20px;
+                    font-size: 12px;
                 }
                 &::placeholder {
                     font-size: 32px;
