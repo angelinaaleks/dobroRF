@@ -85,33 +85,28 @@ export const About = () => {
           </div>
         </div>
         <div className={styles.aboutGrid}>
-          <img alt="About" />
+          <img src="images/mission.jpg" alt="About" />
           <div>
             <h3>Миссия</h3>
             <p>
-              text text text text text text text text text text text text text text text text text
-              text text text text text text text text text text text text text text text text text
-              text text text text text text text text text text text text text text text text text
-              text text text text text text text text text text text text text
-            </p>
-          </div>
-          <div>
-            <h3>История создания</h3>
-            <p>
-              text text text text text text text text text text text text text text text text text
-              text text text text text text text text text text text text text text text text text
-              text text text text text text text text text text text text text text text text text
-              text text text text text text text text text text text text text
+              Организуем и проводим добровольческие акции, патриотические, профориентационные и
+              культурные мероприятия Запускаем конкурсы и форумы, где рождаются новые идеи Вовремя
+              информируем о всех событиях - чтобы вы ничего не пропустили
             </p>
           </div>
           <div>
             <h3>Команда</h3>
             <p>
-              text text text text text text text text text text text text text text text text text
-              text text text text text text text text text text text text text text text text text
-              text text text text text text text text text text text text text text text text text
-              text text text text text text text text text text text text text
+              Сергеева Елена Сергеевна - руководитель Доброцентра. Тел. +7 (962) 213-24-75
+              <br />
+              Перебейнос Станислав Игоревич – координатор
+              <br />
+              Майорова Виктория Юрьевна – специалист по взаимодействию с Серебряными волонтерами и
+              общественными организациями.
             </p>
+          </div>
+          <div>
+            <img src="images/command.jpg" />
           </div>
         </div>
         <div className={styles.directions}>

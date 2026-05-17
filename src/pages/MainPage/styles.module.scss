@@ -670,8 +670,7 @@
                 }
                 img {
                     height: 700px;
-                    background-color: #cbcaca;
-                    border-radius: 50px;
+                    border-radius: 50%;
                     width: 50%;
 
                     @media(max-width: 1600px) {

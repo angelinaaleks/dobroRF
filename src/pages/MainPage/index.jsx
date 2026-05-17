@@ -8,20 +8,14 @@ export const MainPage = () => {
   const activities = [
     {
       id: 1,
-      title: 'АКТИВНОСТЬ',
-      description: 'О активности кратко',
       image: '/images/activity1.jpg',
     },
     {
       id: 2,
-      title: 'АКТИВНОСТЬ',
-      description: 'О активности кратко',
       image: '/images/activity2.jpg',
     },
     {
       id: 3,
-      title: 'АКТИВНОСТЬ',
-      description: 'О активности кратко',
       image: '/images/activity3.jpg',
     },
   ];
@@ -155,10 +149,8 @@ export const MainPage = () => {
             {activities.map((activity) => (
               <div key={activity.id} className={styles.activityCard}>
                 <div className={styles.activityImage}>
-                  <img src={activity.image} alt={activity.title} />
+                  <img src={activity.image} alt="Активность" />
                 </div>
-                <h3 className={styles.activityTitle}>{activity.title}</h3>
-                <p className={styles.activityDescription}>{activity.description}</p>
               </div>
             ))}
           </div>
@@ -174,7 +166,7 @@ export const MainPage = () => {
           <div className={styles.youthLife}>
             <h2 className={styles.youthLifeTitle}>Молодёжная жизнь района</h2>
             <div className={styles.youthContent}>
-              <img alt="Картинка" />
+              <img src="images/volunter.jpg" alt="Картинка" />
               <div className={styles.youthContentText}>
                 <Link
                   to="/youth-life"
@@ -188,7 +180,7 @@ export const MainPage = () => {
                 </p>
               </div>
             </div>
-            <div className={styles.partners}>
+            {/* <div className={styles.partners}>
               <h2>Нас поддерживают и помогают вместе с нами</h2>
               <div className={styles.partnersGrid}>
                 {partners.map((partner) => (
@@ -198,7 +190,7 @@ export const MainPage = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

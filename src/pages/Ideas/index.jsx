@@ -1,28 +1,104 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
-import youIdeas from '../../assets/youIdeas.json';
 import { Pagination } from '../../Components/Pagination';
-import { Idea } from '../../Components/Idea';
 import { Link } from 'react-router-dom';
 import { ContextApp } from '../../context';
 
 export const Ideas = () => {
-  const [Page, setPage] = React.useState(1);
-  const [PageYou, setPageYou] = React.useState(1);
-  const { ideas, setIdeas } = React.useContext(ContextApp);
-  const [valueSearch, setValueSearch] = React.useState('');
-  const [filterIdeas, setFilterIdeas] = React.useState([]);
-  const [searchTerm, setSearchTerm] = React.useState('');
+  const [Page, setPage] = useState(1);
+  const [PageYou, setPageYou] = useState(1);
+  const [valueSearch, setValueSearch] = useState('');
+  const [filterIdeas, setFilterIdeas] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const { ideas, loading, error, refetchIdeas } = React.useContext(ContextApp);
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [contacts, setContacts] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  React.useEffect(() => {
+  const ITEMS_PER_PAGE = 2;
+
+  const getApiBaseUrl = () => {
+    return process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+  };
+
+  // Отправка новой идеи
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!title.trim()) {
+      alert('Пожалуйста, введите название идеи');
+      return;
+    }
+    if (!description.trim()) {
+      alert('Пожалуйста, введите описание идеи');
+      return;
+    }
+    if (!contacts.trim()) {
+      alert('Пожалуйста, укажите контакты');
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const requestData = {
+        title: title.trim(),
+        description: description.trim(),
+        contacts: contacts.trim(),
+        vote: 0,
+        createdAt: new Date().toISOString(),
+      };
+
+      console.log('Отправка в MongoDB:', requestData);
+
+      const response = await fetch(`${getApiBaseUrl()}/ideas`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || `Ошибка ${response.status}`);
+      }
+
+      const savedIdea = await response.json();
+      console.log('Идея сохранена в MongoDB:', savedIdea);
+
+      alert('Идея успешно отправлена!');
+
+      setTitle('');
+      setDescription('');
+      setContacts('');
+
+      // Обновляем список идей
+      await refetchIdeas();
+
+      // Сбрасываем поиск и пагинацию
+      setValueSearch('');
+      setPage(1);
+      setPageYou(1);
+    } catch (error) {
+      console.error('Ошибка при сохранении:', error);
+      alert(`Ошибка: ${error.message}`);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Фильтрация идей из контекста
+  useEffect(() => {
     if (!valueSearch.trim()) {
       setFilterIdeas(ideas);
     } else {
       const searchLower = valueSearch.toLowerCase();
       const filtered = ideas.filter(
         (idea) =>
-          idea.title.toLowerCase().includes(searchLower) ||
-          idea.about.toLowerCase().includes(searchLower),
+          idea.title?.toLowerCase().includes(searchLower) ||
+          idea.description?.toLowerCase().includes(searchLower),
       );
       setFilterIdeas(filtered);
     }
@@ -39,29 +115,17 @@ export const Ideas = () => {
               className={styles.circle}
               viewBox="0 0 44 40"
               xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
               width="44.000000"
               height="40.000000"
-              fill="none"
-              customFrame="#000000">
-              <ellipse
-                id="Эллипс 2"
-                rx="22.000000"
-                ry="20.000000"
-                cx="22"
-                cy="20"
-                fill="rgb(255,93,0)"
-              />
+              fill="none">
+              <ellipse rx="22.000000" ry="20.000000" cx="22" cy="20" fill="rgb(255,93,0)" />
             </svg>
             <svg
               className={styles.smile}
               viewBox="0 0 183 133"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
               width="183.000000"
               height="133.000000"
-              fill="none"
-              customFrame="#000000">
+              fill="none">
               <defs>
                 <image
                   id="image_0"
@@ -73,7 +137,6 @@ export const Ideas = () => {
                   id="pattern_0"
                   width="1.000000"
                   height="1.000000"
-                  image-fill-type="fill"
                   patternContentUnits="objectBoundingBox">
                   <use
                     transform="matrix(0.0133333,0,0,0.0183459,0,-0.0228572)"
@@ -81,35 +144,20 @@ export const Ideas = () => {
                   />
                 </pattern>
               </defs>
-              <rect
-                id="12 1"
-                width="183.000000"
-                height="133.000000"
-                x="0.000000"
-                y="0.000000"
-                fill="url(#pattern_0)"
-              />
+              <rect width="183.000000" height="133.000000" fill="url(#pattern_0)" />
             </svg>
             <svg
               className={styles.circle}
               viewBox="0 0 44 40"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
               width="44.000000"
               height="40.000000"
-              fill="none"
-              customFrame="#000000">
-              <ellipse
-                id="Эллипс 2"
-                rx="22.000000"
-                ry="20.000000"
-                cx="22"
-                cy="20"
-                fill="rgb(255,93,0)"
-              />
+              fill="none">
+              <ellipse rx="22.000000" ry="20.000000" cx="22" cy="20" fill="rgb(255,93,0)" />
             </svg>
           </div>
         </div>
+
+        {/* Список идей */}
         <div className={styles.ideas}>
           <h2 className={styles.IdeasTitle}>Список идей</h2>
           <div className={styles.search}>
@@ -117,62 +165,58 @@ export const Ideas = () => {
               <input
                 placeholder="Поиск идеи"
                 value={valueSearch}
-                onChange={(e) => setValueSearch(e.target.value)}></input>
+                onChange={(e) => setValueSearch(e.target.value)}
+              />
               <svg
                 onClick={() => setValueSearch('')}
                 className={styles.clear}
                 width="40px"
                 height="40px"
                 viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                fill="none">
                 <path
                   d="M20 20L4 4.00003M20 4L4.00002 20"
                   stroke="#000"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 />
               </svg>
               <svg
                 className={styles.glass}
                 onClick={() => setSearchTerm(valueSearch)}
                 viewBox="0 0 70 72"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsXlink="http://www.w3.org/1999/xlink"
                 width="70.000000"
                 height="72.000000"
                 fill="none">
-                <rect
-                  id="search"
-                  width="70.000000"
-                  height="72.000000"
-                  x="0.000000"
-                  y="0.000000"
-                  fill="rgb(255,255,255)"
-                  fill-opacity="0"
-                />
+                <rect width="70" height="72" fill="rgb(255,255,255)" fillOpacity="0" />
                 <path
-                  id="矢量 267"
                   d="M45.2083 42L42.9042 42L42.0875 41.19C44.9458 37.77 46.6667 33.33 46.6667 28.5C46.6667 17.73 38.1792 9 27.7083 9C17.2375 9 8.75 17.73 8.75 28.5C8.75 39.27 17.2375 48 27.7083 48C32.4042 48 36.7208 46.23 40.0458 43.29L40.8333 44.13L40.8333 46.5L55.4167 61.47L59.7625 57L45.2083 42ZM27.7083 42C20.4458 42 14.5833 35.97 14.5833 28.5C14.5833 21.03 20.4458 15 27.7083 15C34.9708 15 40.8333 21.03 40.8333 28.5C40.8333 35.97 34.9708 42 27.7083 42Z"
                   fill="rgb(68,68,68)"
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                 />
               </svg>
             </div>
           </div>
-          {filterIdeas.length == 0 ? (
+
+          {loading ? (
+            <div>Загрузка идей...</div>
+          ) : error ? (
+            <div className={styles.error}>Ошибка: {error}</div>
+          ) : filterIdeas.length === 0 ? (
             <div className={styles.notFoundSearch}>
-              <h3>Ничего не найдено</h3>
+              <h3>{valueSearch ? 'Ничего не найдено' : 'Пока нет идей'}</h3>
             </div>
           ) : (
             <div>
-              {filterIdeas.slice(Page * 2 - 2, Page * 2).map((idea) => (
-                <Link to={`/ideas/${idea.id}`} className={styles.moreIdea}>
-                  <div key={idea.id} className={styles.idea}>
+              {filterIdeas.slice((Page - 1) * ITEMS_PER_PAGE, Page * ITEMS_PER_PAGE).map((idea) => (
+                <Link to={`/ideas/${idea._id}`} className={styles.moreIdea} key={idea._id}>
+                  <div className={styles.idea}>
                     <div className={styles.ideaTitle}>
                       <h2>{idea.title}</h2>
-                      <h2>Голоса: {idea.vote}</h2>
-                      <h6 className={styles[idea.statusColor]}>{idea.status}</h6>
+                      <h2>Голоса: {idea.vote || 0}</h2>
+                      <h6 className={styles[idea.statusColor]}>
+                        {idea.status || 'На рассмотрении'}
+                      </h6>
                     </div>
                     <p>подробнее...</p>
                   </div>
@@ -181,56 +225,87 @@ export const Ideas = () => {
               <Pagination
                 className={styles.pagination}
                 onChangePage={(number) => setPage(number)}
+                totalPages={Math.ceil(filterIdeas.length / ITEMS_PER_PAGE)}
+                currentPage={Page}
               />
             </div>
           )}
         </div>
-        <div>
+        {/* <div>
           <h2 className={styles.IdeasTitle}>Ваши идеи</h2>
-          {youIdeas.length > 0 ? (
+          {loading ? (
+            <div>Загрузка идей...</div>
+          ) : error ? (
+            <div className={styles.error}>Ошибка: {error}</div>
+          ) : ideas.length > 0 ? (
             <div>
               <div className={styles.youIdeas}>
-                {youIdeas.slice(PageYou * 2 - 2, PageYou * 2).map((idea) => (
-                  <div key={idea.id} className={styles.idea}>
-                    <div className={styles.ideaTitle}>
-                      <h2>{idea.title}</h2>
-                      <h2>Голоса: {idea.vote}</h2>
-                      <h6>Статус</h6>
+                {ideas
+                  .slice((PageYou - 1) * ITEMS_PER_PAGE, PageYou * ITEMS_PER_PAGE)
+                  .map((idea) => (
+                    <div key={idea._id} className={styles.idea}>
+                      <div className={styles.ideaTitle}>
+                        <h2>{idea.title}</h2>
+                        <h2>Голоса: {idea.vote || 0}</h2>
+                        <h6>{idea.status || 'На рассмотрении'}</h6>
+                      </div>
+                      <Link to={`/ideas/${idea._id}`}>
+                        <p>подробнее...</p>
+                      </Link>
                     </div>
-                    <p>подробнее...</p>
-                  </div>
-                ))}
+                  ))}
               </div>
               <Pagination
                 className={styles.pagination}
                 onChangePage={(number) => setPageYou(number)}
+                totalPages={Math.ceil(ideas.length / ITEMS_PER_PAGE)}
+                currentPage={PageYou}
               />
             </div>
           ) : (
             <div className={styles.notFound}>
-              <h2>Есть идеи?</h2>
+              <h2>Есть идеи? Будьте первым!</h2>
             </div>
           )}
-        </div>
-        <form>
-          <h2>Форма для отправки идеи </h2>
+        </div> */}
+
+        {/* Форма отправки идеи */}
+        <form onSubmit={handleSubmit}>
+          <h2>Форма для отправки идеи</h2>
           <div className={styles.titleInput}>
             <h3>название:</h3>
-            <input placeholder="Название вашей идеи" />
+            <input
+              placeholder="Название вашей идеи"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              disabled={isSubmitting}
+            />
           </div>
           <div className={styles.description}>
             <h3>описание:</h3>
-            <textarea cols={60} placeholder="Опишите подробно свою идею" />
+            <textarea
+              cols={60}
+              placeholder="Опишите подробно свою идею"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              disabled={isSubmitting}
+            />
           </div>
           <div className={styles.contacts}>
             <h3>контакты автора:</h3>
             <div className={styles.contactsInput}>
-              <input placeholder="Укажите свои контакты (соц.сети, номер, почта)" />
-              <button type="submit">Отправить</button>
+              <input
+                placeholder="Укажите свои контакты (соц.сети, номер, почта)"
+                value={contacts}
+                onChange={(e) => setContacts(e.target.value)}
+                disabled={isSubmitting}
+              />
+              <button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Отправка...' : 'Отправить'}
+              </button>
             </div>
           </div>
         </form>
-        {/* <Idea /> */}
       </section>
     </div>
   );

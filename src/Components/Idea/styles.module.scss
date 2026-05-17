@@ -443,11 +443,27 @@
                 }
             }
         }
-        .button {
+        .voteSection {
             background: transparent;
             display: flex;
-            justify-content: center;
-            button {
+            flex-direction: column;
+            background: transparent;
+            form {
+                background: transparent;
+                input {
+                    background: transparent;
+                }
+                p {
+                    background: transparent;
+                    font-size: 10px;
+                    color: var(--color-primary-orange);
+                }
+            }
+            .button {
+                background: transparent;
+                display: flex;
+                justify-content: center;
+                button {
                 background-color: var(--color-primary-orange);
                 border-radius: 70px;
                 padding: 50px 70px;
@@ -484,6 +500,7 @@
                     border-radius: 15px;
                     margin: 20px 0 30px 0;
                 }
+            }
             }
         }
         .back {

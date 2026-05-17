@@ -24,7 +24,7 @@ export const Footer = () => {
           <div className={styles.Icon}>
             <img
               onClick={() =>
-                window.open('https://vk.com/frunzpmdc', '_blank', 'noopener,noreferrer')
+                window.open('https://vk.com/opmifrunz', '_blank', 'noopener,noreferrer')
               }
               src="/images/vk.svg"
               alt="VK"
@@ -32,7 +32,7 @@ export const Footer = () => {
             <img
               onClick={() =>
                 window.open(
-                  'https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1',
+                  'https://max.ru/id7816376882_gos?utm_source=maxhubs.ru',
                   '_blank',
                   'noopener,noreferrer',
                 )
@@ -41,7 +41,9 @@ export const Footer = () => {
               alt="MAX"
             />
             <img
-              onClick={() => window.open('https://dobro.ru/', '_blank', 'noopener,noreferrer')}
+              onClick={() =>
+                window.open('https://center.dobro.ru/', '_blank', 'noopener,noreferrer')
+              }
               src="/images/ob.svg"
               alt="DOBRO"
             />

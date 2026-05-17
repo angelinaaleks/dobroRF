@@ -17,7 +17,7 @@ export const Header = () => {
     { path: '/about', label: 'О центре', isAnchor: false },
     { path: '/youth-life', label: 'Молодёжная жизнь', isAnchor: false },
     { path: '/ideas', label: 'Копилка идей', isAnchor: false },
-    { path: '/hall-of-fame', label: 'Зал славы', isAnchor: false },
+    // { path: '/hall-of-fame', label: 'Зал славы', isAnchor: false },
     { path: '/contacts', label: 'Контакты', isAnchor: true },
   ];
 

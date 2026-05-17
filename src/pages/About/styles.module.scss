@@ -252,6 +252,7 @@
             height: 90%;
             background: #c4c4c4;
             border-radius: 90px;
+            object-fit: cover;
 
             @media(max-width: 650px) {
                 border-radius: 60px;
@@ -313,12 +314,7 @@
             font-size: 50px; //50
             font-weight: 400;
             color: var(--color-primary-orange);
-            display: -webkit-box;
             word-break: keep-all; //перенос строки
-            text-decoration: underline;
-            text-underline-offset: 8px;
-            -webkit-line-clamp: 10;
-            -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
             text-align: justify;

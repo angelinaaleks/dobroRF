@@ -337,19 +337,19 @@
                     h3 {
                         background: transparent;
                         color: var(--color-primary-orange);
-                        font-size: 60px;
+                        font-size: 46px;
                         font-weight: 400;
 
                         @media (max-width: 1800px) {
-                            font-size: 54px;
+                            font-size: 40px;
                         }
 
                         @media (max-width: 1600px) {
-                            font-size: 36px;
+                            font-size: 34px;
                         }
 
                         @media (max-width: 1200px) {
-                            font-size: 26px;
+                            font-size: 24px;
                         }
 
                         @media (max-width: 1000px) {
@@ -371,66 +371,66 @@
                     h4{
                         background: transparent;
                         color: var(--color-primary-orange);
-                        font-size: 46px;
+                        font-size: 32px;
                         font-weight: 400;
                         text-align: justify;
 
                         @media(max-width: 1800px) {
-                            font-size: 42px;
+                            font-size: 26px;
                         }
 
                         @media(max-width: 1600px) {
-                            font-size: 36px;
+                            font-size: 24px;
                         }
 
                         @media(max-width: 1400px) {
-                            font-size: 30px;
+                            font-size: 20px;
                         }
 
                         @media(max-width: 1100px) {
-                            font-size: 22px;
+                            font-size: 14px;
                         }
 
                         @media(max-width: 800px) {
-                            font-size: 16px;
-                        }
-
-                        @media(max-width: 520px) {
                             font-size: 12px;
                         }
 
+                        @media(max-width: 600px) {
+                            font-size: 8px;
+                        }
+
                         @media(max-width: 400px) {
-                            font-size: 10px;
+                            font-size: 6px;
                         }
                     }
                     span, a {
                         background: transparent;
-                        font-size: 46px;
+                        font-size: 32px;
                         color: var(--color-primary-purple);
                         cursor: pointer;
 
                         @media(max-width: 1800px) {
-                            font-size: 42px;
+                            font-size: 26px;
                         }
 
                         @media(max-width: 1400px) {
-                            font-size: 30px;
+                            font-size: 20px;
                         }
 
                         @media(max-width: 1100px) {
-                            font-size: 22px;
+                            font-size: 14px;
                         }
 
                         @media(max-width: 800px) {
-                            font-size: 16px;
-                        }
-
-                        @media(max-width: 520px) {
                             font-size: 12px;
                         }
 
+                        @media(max-width: 600px) {
+                            font-size: 8px;
+                        }
+
                         @media(max-width: 400px) {
-                            font-size: 10px;
+                            font-size: 6px;
                         }
                     }
                 }

@@ -1,66 +1,122 @@
 [
     {
-      "id": 1,
-      "title": "Название клуба 1",
-      "address": "address address address",
-      "image": "/images/club1.jpg",
-      "about": "about about about about about about about about about about",
-      "networks": {"vk.com": "https://vk.com/frunzpmdc", "max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"}
+        "id": 1,
+        "title": "Атмосфера",
+        "address": "г. Санкт-Петербург, ул. Софийская, д. 39, корп. 1",
+        "image": "/images/club1.jpg",
+        "about": "Приветствуем тебя в молодёжном клубе «Атмосфера»! Мы это настоящий островок вдохновения, где рождаются таланты и расцветает креатив",
+        "networks": {
+            "vk.com": "https://vk.com/pmk.atmosfera"
+        }
     },
     {
-      "id": 2,
-      "title": "Название клуба 2",
-      "address": "address address address",
-      "image": "/images/club2.jpg",
-      "about": "about about about about about about about about about about",
-      "networks": {"max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"}
+        "id": 2,
+        "title": "Молодежное креативное объединение «Молоко»",
+        "address": "ул. Бухарестская, д.91 А",
+        "image": "/images/club2.jpg",
+        "about": "Молодежное креативное объединение «Молоко» - это место, где можно получить знания, прокачать навыки, найти единомышленников, окунуться в творческие и технические направления, интересно провести свободное время.",
+        "networks": {
+            "vk.com": "https://vk.com/moloko_frunz"
+        }
     },
     {
-      "id": 3,
-      "title": "Название клуба 3",
-      "address": "address address address",
-      "image": "/images/club3.jpg",
-      "about": "about about about about about about about about about about",
-      "networks": {"vk.com": "https://vk.com/frunzpmdc"}
+        "id": 3,
+        "title": "Подростково-молодежный клуб «Гармония»",
+        "address": "г. Санкт-Петербург, ул. Купчинская, д. 23",
+        "image": "/images/club3.jpg",
+        "about": "Мы - это пространство для души и тела. Здесь ты обретешь внутренний баланс, раскроешь свой творческий потенциал и научишься заботиться о себе и своей красоте. Миссия клуба: Помогать молодежи гармонично развивать свою личность через искусство, движение и заботу о себе.",
+        "networks": {
+            "vk.com": "https://vk.com/pmk.garmonia"
+        }
     },
     {
-      "id": 4,
-      "title": "Название клуба 4",
-      "address": "address address address",
-      "image": "/images/club4.jpg",
-      "about": "about about about about about about about about about about",
-      "networks": {"vk.com": "https://vk.com/frunzpmdc", "max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"}
+        "id": 4,
+        "title": "Подростково-молодежный клуб «Прогресс»",
+        "address": "г. Санкт-Петербург, ул. Бухарестская, д. 31, корп. 1",
+        "image": "/images/club4.jpg",
+        "about": "В подростково-молодежном клубе «Прогресс» занимается около 300 воспитанников, работают специалисты и руководители коллективов – творческие и талантливые люди с большим опытом работы.",
+        "networks": {
+            "vk.com": "https://vk.com/progresssportclub"
+        }
     },
     {
-      "id": 5,
-      "title": "Название клуба 5",
-      "address": "address address address",
-      "image": "/images/club5.jpg",
-      "about": "about about about about about about about about about about",
-      "networks": {"vk.com": "https://vk.com/frunzpmdc", "max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"}
+        "id": 5,
+        "title": "Дом молодежи «Купчино»",
+        "address": "г. Санкт-Петербург, ул. Олеко Дундича, 32",
+        "image": "/images/club5.jpg",
+        "about": "Дом молодежи «Купчино» является одним из самых посещаемых клубов Подростково-молодежного досугового центра «Фрунзенский», на базе которого развиваются такие направления деятельности, как: культурно-досуговое, театральное, художественное и спортивное, гражданско-патриотическое и профилактическое и многое др.",
+        "networks": {
+            "vk.com": "https://vk.com/domik_frunz"
+        }
     },
     {
-      "id": 6,
-      "title": "Название клуба 6",
-      "address": "address address address",
-      "image": "/images/club6.jpg",
-      "about": "about about about about about about about about about about",
-      "networks": {"vk.com": "https://vk.com/frunzpmdc", "max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"}
+        "id": 6,
+        "title": "Подростково-молодежный клуб «Планета»",
+        "address": "г. Санкт-Петербург, ул. Будапештская, д. 33",
+        "image": "/images/club6.jpg",
+        "about": "Мы – это твоё личное пространство для творчества, самовыражения и общения. Здесь ты сможешь раскрыть свой танцевальный талант, найти новых друзей и просто классно провести время в уютной атмосфере.",
+        "networks": {
+            "vk.com": "https://vk.com/planeta_tyt"
+        }
     },
     {
-      "id": 7,
-      "title": "Название клуба 7",
-      "address": "address address address",
-      "image": "/images/club7.jpg",
-      "about": "about about about about about about about about about about",
-      "networks": {"vk.com": "https://vk.com/frunzpmdc", "max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"}
+        "id": 7,
+        "title": "Подростково-молодежный клуб «Ракетка»",
+        "address": "г. Санкт-Петербург, ул. Будапештская, д. 49",
+        "image": "/images/club7.jpg",
+        "about": "Клуб «Ракетка» - это твой личный корт в мире настольного тенниса. Здесь всегда царит атмосфера спортивного азарта, здоровой конкуренции и стремления к победе.",
+        "networks": {
+            "vk.com": "https://vk.com/pmk.raketka"
+        }
     },
     {
-      "id": 8,
-      "title": "Название клуба 8",
-      "address": "address address address",
-      "image": "/images/club8.jpg",
-      "about": "about about about about about about about about about about",
-      "networks": {"vk.com": "https://vk.com/frunzpmdc", "max.ru":"https://vk.com/away.php?to=https%3A%2F%2Fmax.ru%2Fid7816376882_gos&utf=1"}
+        "id": 8,
+        "title": "Подростково-молодежный клуб «Современник»",
+        "address": "г. Санкт-Петербург, ул. Купчинская, д. 32",
+        "image": "/images/club8.jpg",
+        "about": "Мы - это центр притяжения для ярких и разносторонних личностей. Здесь более 250 ребят уже нашли занятие по душе и раскрывают свои таланты в самых разных направлениях.",
+        "networks": {
+            "vk.com": "https://vk.com/newsovremennik"
+        }
+    },
+    {
+        "id": 9,
+        "title": "Подростково-молодежный клуб «Старт»",
+        "address": "г. Санкт-Петербург, ул. Софийская, д. 47, корп. 1",
+        "image": "/images/club9.jpg",
+        "about": "Подростково-молодежный клуб «Старт» был создан как физкультурно-спортивный клуб в мае 1984 года. И с первых дней своего существования он становится настоящим спортивным центром для жителей микрорайона. Футбольные команды клуба «Старт»",
+        "networks": {
+            "vk.com": "https://vk.com/pmk.start"
+        }
+    },
+    {
+        "id": 10,
+        "title": "Подростково-молодежный клуб «Факел»",
+        "address": "г. Санкт-Петербург, ул. Софийская, д. 44",
+        "image": "/images/club10.jpg",
+        "about": "Подростково-молодежный клуб «Факел» - это место, где легко уживаются творчество, упорство и целеустремлённость. Молодые люди в возрасте от 14 до 35 лет являются той самой возрастной категорией, на которую ориентирована работа клуба. Те, кто старше или младше, тоже найдут, чем заняться в стенах «Факела». Занятия ведут опытные специалисты, выдающиеся мастера. Занимающиеся клуба регулярно участвуют и побеждают в городских, региональных и федеральных конкурсах.",
+        "networks": {
+            "vk.com": "https://vk.com/pmk.fakel"
+        }
+    },
+    {
+        "id": 11,
+        "title": "Подростково-молодежный клуб «Феникс»",
+        "address": "Санкт-Петербург, ул. Пловдивская, д. 9",
+        "image": "/images/club11.jpg",
+        "about": "Подростково-молодежный клуб «Феникс» активно занимается профилактикой правонарушений в подростково-молодежной среде. Одним из важных способов такой профилактики является создание подростково-молодежного формирования на базе клубов, в виде секций и кружков, а также организованного культурно-массового досуга непосредственно по месту жительства, в пределах пошаговой доступности для каждого подростка.",
+        "networks": {
+            "vk.com": "https://vk.com/pmk.fenix"
+        }
+    },
+    {
+        "id": 12,
+        "title": "Подростково-молодежный клуб «Юность»",
+        "address": "г. Санкт-Петербург, ул. Купчинская, д. 15, к. 1",
+        "image": "/images/club12.jpg",
+        "about": "Присоединяйся и получай удовольствие от общения с единомышленниками, обмена опытом, встреч с интересными людьми и многого другого. Ждем в нашем дружном клубе!",
+        "networks": {
+            "vk.com": "https://vk.com/pmk.yunost"
+        }
     }
-  ]
+]
